@@ -1,0 +1,775 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sonam Rugs — Handmade Tibetan Carpets</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+
+:root{
+  --sand:    #f2ede6;
+  --sand-d:  #e8e0d4;
+  --bone:    #faf8f4;
+  --ink:     #1c1916;
+  --ink-s:   #5a544c;
+  --ink-m:   #9e968b;
+  --gold:    #9a7c4f;
+  --gold-l:  #c9a96e;
+  --gold-ll: #f0e5d0;
+  --line:    rgba(28,25,22,0.10);
+  --r: 2px;
+}
+
+html{scroll-behavior:smooth}
+
+body{
+  font-family:'Jost',sans-serif;
+  background:var(--bone);
+  color:var(--ink);
+  font-size:16px;
+  line-height:1.6;
+  -webkit-font-smoothing:antialiased;
+  overflow-x:hidden;
+  cursor:none;
+}
+
+/* ── CUSTOM CURSOR ── */
+.cursor{
+  position:fixed;width:10px;height:10px;border-radius:50%;
+  background:var(--gold);pointer-events:none;z-index:9999;
+  transform:translate(-50%,-50%);
+  transition:transform 0.1s,width 0.25s,height 0.25s,background 0.25s;
+}
+.cursor-ring{
+  position:fixed;width:36px;height:36px;border-radius:50%;
+  border:1px solid var(--gold-l);pointer-events:none;z-index:9998;
+  transform:translate(-50%,-50%);
+  transition:transform 0.18s ease,width 0.3s,height 0.3s,opacity 0.3s;
+  opacity:0.5;
+}
+body:hover .cursor{opacity:1}
+
+/* ── NAV ── */
+nav{
+  position:fixed;top:0;left:0;right:0;z-index:500;
+  display:flex;align-items:center;justify-content:space-between;
+  padding:28px 56px;
+  transition:background 0.4s,padding 0.4s,border 0.4s;
+}
+nav.scrolled{
+  background:rgba(250,248,244,0.92);backdrop-filter:blur(20px);
+  padding:18px 56px;border-bottom:1px solid var(--line);
+}
+.nav-logo{
+  font-family:'Cormorant Garamond',serif;
+  font-size:24px;font-weight:400;letter-spacing:0.06em;
+  text-transform:uppercase;color:var(--bone);text-decoration:none;
+  transition:color 0.3s;
+}
+nav.scrolled .nav-logo{color:var(--ink)}
+.nav-links{display:flex;gap:40px;list-style:none}
+.nav-links a{
+  font-size:11px;font-weight:400;letter-spacing:0.18em;text-transform:uppercase;
+  color:rgba(250,248,244,0.7);text-decoration:none;transition:color 0.2s;
+}
+nav.scrolled .nav-links a{color:var(--ink-s)}
+.nav-links a:hover{color:var(--gold-l) !important}
+.nav-btn{
+  font-size:11px;letter-spacing:0.15em;text-transform:uppercase;
+  padding:11px 26px;border:1px solid rgba(250,248,244,0.5);
+  color:var(--bone);text-decoration:none;
+  transition:background 0.25s,color 0.25s,border 0.25s;
+}
+nav.scrolled .nav-btn{border-color:var(--gold);color:var(--gold)}
+.nav-btn:hover{background:var(--gold);border-color:var(--gold);color:var(--bone) !important}
+
+/* ── HERO ── */
+.hero{
+  position:relative;min-height:100vh;
+  display:flex;align-items:flex-end;
+  overflow:hidden;
+}
+.hero-bg{
+  position:absolute;inset:0;
+  background:
+    linear-gradient(to bottom, rgba(28,25,22,0.2) 0%, rgba(28,25,22,0.55) 100%),
+    url('https://images.unsplash.com/photo-1600166898405-da9535204843?w=1800&q=80') center/cover no-repeat;
+}
+.hero-grain{
+  position:absolute;inset:0;
+  background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+  opacity:0.4;pointer-events:none;
+}
+.hero-content{
+  position:relative;z-index:2;
+  padding:0 80px 100px;
+  max-width:860px;
+}
+.hero-eyebrow{
+  font-size:11px;letter-spacing:0.22em;text-transform:uppercase;
+  color:var(--gold-l);font-weight:400;margin-bottom:28px;
+  display:flex;align-items:center;gap:16px;
+  animation:fadeUp 1s 0.2s both;
+}
+.hero-eyebrow::before{content:'';width:40px;height:1px;background:var(--gold-l)}
+.hero h1{
+  font-family:'Cormorant Garamond',serif;
+  font-size:clamp(56px,7.5vw,112px);
+  font-weight:300;line-height:1.0;letter-spacing:-0.01em;
+  color:var(--bone);margin-bottom:36px;
+  animation:fadeUp 1s 0.35s both;
+}
+.hero h1 em{font-style:italic;color:var(--gold-l)}
+.hero-sub{
+  font-size:15px;font-weight:300;letter-spacing:0.04em;
+  color:rgba(250,248,244,0.65);max-width:420px;line-height:1.8;
+  margin-bottom:52px;
+  animation:fadeUp 1s 0.5s both;
+}
+.hero-actions{
+  display:flex;gap:20px;align-items:center;
+  animation:fadeUp 1s 0.65s both;
+}
+.btn-gold{
+  background:var(--gold);color:var(--bone);
+  padding:15px 36px;border:none;
+  font-family:'Jost',sans-serif;font-size:11px;font-weight:400;
+  letter-spacing:0.18em;text-transform:uppercase;
+  text-decoration:none;cursor:none;
+  transition:background 0.25s,transform 0.2s;
+}
+.btn-gold:hover{background:var(--gold-l);transform:translateY(-2px)}
+.btn-ghost{
+  font-size:11px;letter-spacing:0.18em;text-transform:uppercase;
+  color:rgba(250,248,244,0.6);text-decoration:none;
+  display:flex;align-items:center;gap:10px;
+  transition:color 0.2s;
+}
+.btn-ghost:hover{color:var(--bone)}
+.hero-scroll{
+  position:absolute;bottom:48px;right:64px;z-index:3;
+  display:flex;flex-direction:column;align-items:center;gap:12px;
+  animation:fadeUp 1s 0.9s both;
+}
+.scroll-text{font-size:10px;letter-spacing:0.22em;text-transform:uppercase;color:rgba(250,248,244,0.4);writing-mode:vertical-lr}
+.scroll-line{width:1px;height:60px;background:linear-gradient(to bottom,rgba(250,248,244,0.3),transparent);animation:scrollPulse 2s ease infinite}
+@keyframes scrollPulse{0%,100%{transform:scaleY(1);opacity:0.4}50%{transform:scaleY(0.5);opacity:0.8}}
+
+/* ── MARQUEE ── */
+.marquee-bar{
+  background:var(--gold);
+  padding:14px 0;overflow:hidden;
+  display:flex;
+}
+.marquee-track{
+  display:flex;gap:0;white-space:nowrap;
+  animation:marquee 22s linear infinite;
+}
+.marquee-item{
+  font-size:11px;letter-spacing:0.2em;text-transform:uppercase;
+  color:var(--bone);padding:0 40px;
+  display:flex;align-items:center;gap:40px;
+}
+.marquee-item::after{content:'◆';font-size:7px;opacity:0.5}
+@keyframes marquee{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+
+/* ── SHARED SECTION ── */
+section{padding:120px 0}
+.container{max-width:1200px;margin:0 auto;padding:0 56px}
+.eyebrow{
+  font-size:10px;letter-spacing:0.25em;text-transform:uppercase;
+  color:var(--gold);font-weight:400;margin-bottom:18px;
+}
+.display{
+  font-family:'Cormorant Garamond',serif;
+  font-size:clamp(36px,4.5vw,58px);
+  font-weight:300;line-height:1.1;letter-spacing:-0.01em;
+}
+.display em{font-style:italic;color:var(--gold)}
+
+/* ── INTRO SPLIT ── */
+.intro{background:var(--bone)}
+.intro-grid{
+  display:grid;grid-template-columns:1fr 1fr;gap:0;
+  border:1px solid var(--line);
+}
+.intro-left{padding:80px 72px;display:flex;flex-direction:column;justify-content:center}
+.intro-body{
+  font-size:16px;font-weight:300;color:var(--ink-s);
+  line-height:1.85;margin-top:32px;margin-bottom:40px;
+}
+.stat-row{display:flex;gap:40px;padding-top:40px;border-top:1px solid var(--line)}
+.stat .num{font-family:'Cormorant Garamond',serif;font-size:42px;font-weight:300;color:var(--gold);line-height:1}
+.stat .lbl{font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:var(--ink-m);margin-top:6px}
+.intro-right{position:relative;overflow:hidden;min-height:560px}
+.intro-right img{width:100%;height:100%;object-fit:cover;display:block;transition:transform 0.8s ease}
+.intro-right:hover img{transform:scale(1.04)}
+.intro-right-caption{
+  position:absolute;bottom:0;left:0;right:0;
+  padding:24px 28px;
+  background:linear-gradient(to top,rgba(28,25,22,0.7),transparent);
+  font-size:11px;letter-spacing:0.15em;text-transform:uppercase;color:rgba(250,248,244,0.7);
+}
+
+/* ── COLLECTIONS ── */
+.collections{background:var(--sand)}
+.col-header{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:64px}
+.col-link{font-size:11px;letter-spacing:0.18em;text-transform:uppercase;color:var(--gold);text-decoration:none;display:flex;align-items:center;gap:10px}
+.col-link::after{content:'→';transition:transform 0.2s}
+.col-link:hover::after{transform:translateX(4px)}
+.col-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px}
+.col-item{position:relative;overflow:hidden;aspect-ratio:3/4;cursor:none}
+.col-item img{width:100%;height:100%;object-fit:cover;transition:transform 0.7s ease}
+.col-item:hover img{transform:scale(1.06)}
+.col-overlay{
+  position:absolute;inset:0;
+  background:linear-gradient(to top,rgba(28,25,22,0.75) 0%,rgba(28,25,22,0) 55%);
+  display:flex;flex-direction:column;justify-content:flex-end;
+  padding:32px 28px;
+}
+.col-name{font-family:'Cormorant Garamond',serif;font-size:24px;font-weight:300;color:var(--bone)}
+.col-sub{font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:rgba(250,248,244,0.55);margin-top:4px}
+.col-tag{
+  position:absolute;top:24px;left:24px;
+  background:var(--gold);color:var(--bone);
+  font-size:10px;letter-spacing:0.18em;text-transform:uppercase;
+  padding:5px 12px;
+}
+
+/* ── FEATURES ── */
+.features{background:var(--ink);color:var(--bone)}
+.features .eyebrow{color:var(--gold-l)}
+.features .display{color:var(--bone)}
+.features-body{
+  display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start;
+  margin-top:72px;
+}
+.features-left img{width:100%;aspect-ratio:4/5;object-fit:cover;display:block}
+.features-right{display:flex;flex-direction:column;gap:0}
+.feat{
+  padding:36px 0;border-bottom:1px solid rgba(250,248,244,0.08);
+  display:grid;grid-template-columns:48px 1fr;gap:24px;align-items:start;
+  transition:background 0.2s;
+}
+.feat:first-child{padding-top:0}
+.feat-num{font-family:'Cormorant Garamond',serif;font-size:13px;color:var(--gold);letter-spacing:0.1em}
+.feat h3{font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:300;color:var(--bone);margin-bottom:10px}
+.feat p{font-size:14px;font-weight:300;color:rgba(250,248,244,0.5);line-height:1.75}
+
+/* ── PROCESS ── */
+.process{background:var(--sand-d)}
+.process-steps{
+  display:grid;grid-template-columns:repeat(6,1fr);gap:0;
+  border:1px solid var(--line);margin-top:64px;
+}
+.step{
+  padding:40px 28px;border-right:1px solid var(--line);
+  transition:background 0.25s;
+}
+.step:last-child{border-right:none}
+.step:hover{background:var(--bone)}
+.step-n{font-family:'Cormorant Garamond',serif;font-size:42px;font-weight:300;color:var(--gold-ll);margin-bottom:16px;line-height:1}
+.step h4{font-family:'Cormorant Garamond',serif;font-size:18px;font-weight:400;margin-bottom:10px}
+.step p{font-size:13px;font-weight:300;color:var(--ink-m);line-height:1.65}
+
+/* ── TESTIMONIALS ── */
+.testimonials{background:var(--bone)}
+.testi-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:64px}
+.testi{
+  border:1px solid var(--line);padding:44px 40px;
+  display:flex;flex-direction:column;gap:28px;
+  transition:transform 0.3s,box-shadow 0.3s;
+  background:var(--bone);
+}
+.testi:hover{transform:translateY(-6px);box-shadow:0 20px 60px rgba(28,25,22,0.08)}
+.testi-stars{display:flex;gap:4px}
+.star{width:14px;height:14px;background:var(--gold);clip-path:polygon(50% 0%,61% 35%,98% 35%,68% 57%,79% 91%,50% 70%,21% 91%,32% 57%,2% 35%,39% 35%)}
+.testi q{
+  font-family:'Cormorant Garamond',serif;font-style:italic;
+  font-size:19px;font-weight:300;line-height:1.55;color:var(--ink);
+  quotes:none;flex:1;
+}
+.testi-sig{display:flex;align-items:center;gap:16px;padding-top:24px;border-top:1px solid var(--line)}
+.avatar{width:42px;height:42px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:500;flex-shrink:0}
+.av1{background:#dfe6f0;color:#334d6e}
+.av2{background:#f0e8de;color:#7a4e2d}
+.av3{background:var(--gold-ll);color:var(--gold)}
+.author-n{font-weight:500;font-size:14px}
+.author-r{font-size:12px;color:var(--ink-m);letter-spacing:0.04em}
+
+/* ── FAQ ── */
+.faq{background:var(--sand)}
+.faq-inner{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start}
+.faq-left{}
+.faq-right{padding-top:12px}
+details{border-bottom:1px solid var(--line)}
+details:first-of-type{border-top:1px solid var(--line)}
+summary{
+  padding:22px 0;font-size:15px;font-weight:400;letter-spacing:0.02em;
+  cursor:none;list-style:none;
+  display:flex;justify-content:space-between;align-items:center;
+  user-select:none;
+}
+summary::-webkit-details-marker{display:none}
+.sum-icon{
+  width:24px;height:24px;border-radius:50%;border:1px solid var(--line);
+  display:flex;align-items:center;justify-content:center;
+  font-size:15px;font-weight:300;color:var(--ink-m);flex-shrink:0;
+  transition:background 0.2s,color 0.2s;
+}
+details[open] .sum-icon{background:var(--gold);color:var(--bone);border-color:var(--gold)}
+details p{
+  font-size:14px;font-weight:300;color:var(--ink-s);
+  line-height:1.8;padding-bottom:22px;
+}
+
+/* ── CTA ── */
+.cta-section{
+  background:linear-gradient(135deg,#1c1916 0%,#2e261e 50%,#1c1916 100%);
+  padding:140px 0;text-align:center;position:relative;overflow:hidden;
+}
+.cta-section::before{
+  content:'';position:absolute;inset:0;
+  background:radial-gradient(ellipse 80% 60% at 50% 50%,rgba(154,124,79,0.12),transparent);
+}
+.cta-section .eyebrow{color:var(--gold-l)}
+.cta-section .display{color:var(--bone);max-width:640px;margin:0 auto 20px}
+.cta-sub{font-size:16px;font-weight:300;color:rgba(250,248,244,0.5);margin-bottom:52px;letter-spacing:0.03em}
+.cta-form{display:flex;gap:0;max-width:480px;margin:0 auto 16px;border:1px solid rgba(250,248,244,0.15)}
+.cta-input{
+  flex:1;background:transparent;border:none;
+  padding:16px 24px;font-family:'Jost',sans-serif;font-size:14px;
+  color:var(--bone);outline:none;
+}
+.cta-input::placeholder{color:rgba(250,248,244,0.3)}
+.cta-submit{
+  background:var(--gold);color:var(--bone);border:none;
+  padding:16px 28px;font-family:'Jost',sans-serif;font-size:11px;
+  letter-spacing:0.18em;text-transform:uppercase;cursor:none;
+  transition:background 0.2s;
+}
+.cta-submit:hover{background:var(--gold-l)}
+.cta-note{font-size:12px;color:rgba(250,248,244,0.25);letter-spacing:0.06em}
+.cta-badges{display:flex;justify-content:center;gap:40px;margin-top:64px;padding-top:64px;border-top:1px solid rgba(250,248,244,0.06)}
+.badge{font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:rgba(250,248,244,0.3);display:flex;align-items:center;gap:10px}
+.badge::before{content:'✓';color:var(--gold);font-size:14px}
+
+/* ── FOOTER ── */
+footer{background:var(--ink);padding:64px 56px 40px}
+.footer-top{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:64px;margin-bottom:56px}
+.footer-brand .logo{font-family:'Cormorant Garamond',serif;font-size:26px;font-weight:400;letter-spacing:0.06em;text-transform:uppercase;color:var(--bone);margin-bottom:16px}
+.footer-brand p{font-size:13px;font-weight:300;color:rgba(250,248,244,0.35);line-height:1.8}
+.footer-col h5{font-size:10px;letter-spacing:0.22em;text-transform:uppercase;color:var(--gold);margin-bottom:20px}
+.footer-col ul{list-style:none;display:flex;flex-direction:column;gap:10px}
+.footer-col a{font-size:13px;font-weight:300;color:rgba(250,248,244,0.4);text-decoration:none;transition:color 0.2s}
+.footer-col a:hover{color:var(--bone)}
+.footer-bottom{border-top:1px solid rgba(250,248,244,0.06);padding-top:28px;display:flex;justify-content:space-between;align-items:center}
+.footer-bottom p{font-size:12px;color:rgba(250,248,244,0.2)}
+.goodweave{font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:rgba(250,248,244,0.25);display:flex;align-items:center;gap:10px}
+.goodweave::before{content:'✓';color:var(--gold-l)}
+
+/* ── ANIMATIONS ── */
+@keyframes fadeUp{from{opacity:0;transform:translateY(28px)}to{opacity:1;transform:translateY(0)}}
+.reveal{opacity:0;transform:translateY(28px);transition:opacity 0.8s ease,transform 0.8s ease}
+.reveal.vis{opacity:1;transform:translateY(0)}
+.reveal-l{opacity:0;transform:translateX(-24px);transition:opacity 0.8s ease,transform 0.8s ease}
+.reveal-l.vis{opacity:1;transform:translateX(0)}
+.reveal-r{opacity:0;transform:translateX(24px);transition:opacity 0.8s ease,transform 0.8s ease}
+.reveal-r.vis{opacity:1;transform:translateX(0)}
+
+/* ── RESPONSIVE ── */
+@media(max-width:900px){
+  nav{padding:20px 24px}
+  nav.scrolled{padding:14px 24px}
+  .nav-links{display:none}
+  .hero-content{padding:0 28px 80px}
+  .container{padding:0 28px}
+  .intro-grid{grid-template-columns:1fr}
+  .intro-right{min-height:380px}
+  .col-grid{grid-template-columns:1fr 1fr}
+  .features-body{grid-template-columns:1fr;gap:48px}
+  .process-steps{grid-template-columns:repeat(2,1fr)}
+  .step{border-bottom:1px solid var(--line)}
+  .testi-grid{grid-template-columns:1fr}
+  .faq-inner{grid-template-columns:1fr;gap:48px}
+  .footer-top{grid-template-columns:1fr 1fr;gap:40px}
+  .cta-badges{flex-wrap:wrap;gap:24px}
+  body{cursor:auto}
+  .cursor,.cursor-ring{display:none}
+}
+</style>
+</head>
+<body>
+
+<div class="cursor" id="cursor"></div>
+<div class="cursor-ring" id="ring"></div>
+
+<!-- NAV -->
+<nav id="nav">
+  <a href="#" class="nav-logo">Sonam Rugs</a>
+  <ul class="nav-links">
+    <li><a href="#collections">Collections</a></li>
+    <li><a href="#process">Process</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#faq">FAQ</a></li>
+  </ul>
+  <a href="#contact" class="nav-btn">Enquire Now</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-grain"></div>
+  <div class="hero-content">
+    <div class="hero-eyebrow">Kathmandu · Nepal · Est. 2001</div>
+    <h1>Woven for<br><em>extraordinary</em><br>interiors.</h1>
+    <p class="hero-sub">Handcrafted Tibetan rugs in pure Himalayan wool and silk — made for the world's finest homes.</p>
+    <div class="hero-actions">
+      <a href="#collections" class="btn-gold">Explore Collections</a>
+      <a href="#process" class="btn-ghost">Our craft →</a>
+    </div>
+  </div>
+  <div class="hero-scroll">
+    <div class="scroll-line"></div>
+    <div class="scroll-text">Scroll</div>
+  </div>
+</section>
+
+<!-- MARQUEE -->
+<div class="marquee-bar">
+  <div class="marquee-track">
+    <div class="marquee-item">Hand Knotted</div>
+    <div class="marquee-item">Pure Himalayan Wool</div>
+    <div class="marquee-item">Natural Silk</div>
+    <div class="marquee-item">GoodWeave Certified</div>
+    <div class="marquee-item">Custom Sizes</div>
+    <div class="marquee-item">Bespoke Designs</div>
+    <div class="marquee-item">Ethically Made</div>
+    <div class="marquee-item">Fair Trade Workshop</div>
+    <!-- duplicate for loop -->
+    <div class="marquee-item">Hand Knotted</div>
+    <div class="marquee-item">Pure Himalayan Wool</div>
+    <div class="marquee-item">Natural Silk</div>
+    <div class="marquee-item">GoodWeave Certified</div>
+    <div class="marquee-item">Custom Sizes</div>
+    <div class="marquee-item">Bespoke Designs</div>
+    <div class="marquee-item">Ethically Made</div>
+    <div class="marquee-item">Fair Trade Workshop</div>
+  </div>
+</div>
+
+<!-- INTRO -->
+<section class="intro" id="about">
+  <div class="container">
+    <div class="intro-grid reveal">
+      <div class="intro-left">
+        <p class="eyebrow">Our Story</p>
+        <h2 class="display">Craftsmanship<br>passed down <em>through<br>generations.</em></h2>
+        <p class="intro-body">Founded in the heart of Kathmandu, Sonam Rugs began with a small group of master weavers and a single belief: that quality should never be compromised. Today, our rugs adorn the living rooms, hallways, and studies of discerning homes around the world — from New York penthouses to London townhouses and Parisian apartments.</p>
+        <p class="intro-body" style="margin-top:-8px">Each carpet is woven entirely by hand using traditional Tibetan knotting techniques, with natural Himalayan wool and pure silk sourced directly from trusted suppliers. No shortcuts. No machines.</p>
+        <div class="stat-row">
+          <div class="stat"><div class="num">20+</div><div class="lbl">Years weaving</div></div>
+          <div class="stat"><div class="num">60+</div><div class="lbl">Countries served</div></div>
+          <div class="stat"><div class="num">100%</div><div class="lbl">Hand knotted</div></div>
+        </div>
+      </div>
+      <div class="intro-right">
+        <img src="https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=900&q=80" alt="Artisan weaving a rug in Kathmandu">
+        <div class="intro-right-caption">Master weaver · Boudha, Kathmandu</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- COLLECTIONS -->
+<section class="collections" id="collections">
+  <div class="container">
+    <div class="col-header reveal">
+      <div>
+        <p class="eyebrow">Our Collections</p>
+        <h2 class="display">Every weave,<br>a <em>distinct world.</em></h2>
+      </div>
+      <a href="https://sonamrugs.com/products/" target="_blank" class="col-link">View all collections</a>
+    </div>
+    <div class="col-grid reveal">
+      <div class="col-item">
+        <img src="https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?w=700&q=80" alt="Natural Collection">
+        <div class="col-overlay">
+          <div class="col-name">Natural</div>
+          <div class="col-sub">Undyed Himalayan Wool</div>
+        </div>
+        <div class="col-tag">Bestseller</div>
+      </div>
+      <div class="col-item">
+        <img src="https://images.unsplash.com/photo-1631679706909-1844bbd07221?w=700&q=80" alt="High End Silk Collection">
+        <div class="col-overlay">
+          <div class="col-name">High End Silk</div>
+          <div class="col-sub">Pure Silk & Wool Blend</div>
+        </div>
+      </div>
+      <div class="col-item">
+        <img src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=700&q=80" alt="Flat Weave Collection">
+        <div class="col-overlay">
+          <div class="col-name">Flat Weave</div>
+          <div class="col-sub">Contemporary Kilims</div>
+        </div>
+        <div class="col-tag">New</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FEATURES / WHY US -->
+<section class="features">
+  <div class="container">
+    <div class="features-body">
+      <div class="features-left reveal-l">
+        <img src="https://images.unsplash.com/photo-1600210492493-0946911123ea?w=800&q=80" alt="Luxury interior with Sonam rug">
+      </div>
+      <div class="features-right reveal-r">
+        <p class="eyebrow">Why Sonam Rugs</p>
+        <h2 class="display" style="color:var(--bone);margin-bottom:8px">The difference<br>is in the <em>details.</em></h2>
+        <div class="feat">
+          <div class="feat-num">01</div>
+          <div>
+            <h3>Pure Natural Materials</h3>
+            <p>We use exclusively hand-spun Himalayan wool and natural silk — never synthetic blends. Our dyes are plant and mineral-based, ensuring colours that deepen gracefully with age.</p>
+          </div>
+        </div>
+        <div class="feat">
+          <div class="feat-num">02</div>
+          <div>
+            <h3>Fully Bespoke Service</h3>
+            <p>Every dimension, pile height, colour palette, and pattern is customisable. Work directly with our design team to create a rug made precisely for your space.</p>
+          </div>
+        </div>
+        <div class="feat">
+          <div class="feat-num">03</div>
+          <div>
+            <h3>GoodWeave Certified</h3>
+            <p>We are a proud member of GoodWeave Nepal, guaranteeing that every rug leaving our workshop is made without child labour, in fair and safe conditions.</p>
+          </div>
+        </div>
+        <div class="feat">
+          <div class="feat-num">04</div>
+          <div>
+            <h3>Heirloom Quality</h3>
+            <p>A Sonam rug is designed to last generations. Dense knot counts and expert finishing mean your carpet only becomes more beautiful over decades of use.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section class="process" id="process">
+  <div class="container">
+    <div class="reveal">
+      <p class="eyebrow">How it's made</p>
+      <h2 class="display">Six steps from<br><em>fibre to floor.</em></h2>
+    </div>
+    <div class="process-steps reveal">
+      <div class="step">
+        <div class="step-n">01</div>
+        <h4>Designing</h4>
+        <p>Each pattern begins as a hand-drawn cartoon on graph paper, every knot plotted by our master designers.</p>
+      </div>
+      <div class="step">
+        <div class="step-n">02</div>
+        <h4>Dyeing</h4>
+        <p>Natural fibres are dyed in small batches using traditional mineral and botanical dye recipes refined over centuries.</p>
+      </div>
+      <div class="step">
+        <div class="step-n">03</div>
+        <h4>Weaving</h4>
+        <p>Artisans hand-knot each row of the carpet on vertical looms, a process that can take months for larger pieces.</p>
+      </div>
+      <div class="step">
+        <div class="step-n">04</div>
+        <h4>Washing</h4>
+        <p>Freshly cut rugs are washed with mountain water to soften fibres and reveal the full depth of their colour.</p>
+      </div>
+      <div class="step">
+        <div class="step-n">05</div>
+        <h4>Stretching</h4>
+        <p>Rugs are stretched onto frames and dried under the Kathmandu sun, ensuring they lay perfectly flat for life.</p>
+      </div>
+      <div class="step">
+        <div class="step-n">06</div>
+        <h4>Packing</h4>
+        <p>Each finished carpet is inspected, rolled, and packed with archival materials for safe delivery worldwide.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="testimonials">
+  <div class="container">
+    <div class="reveal">
+      <p class="eyebrow">Client Words</p>
+      <h2 class="display">A rug that<br>becomes <em>the room.</em></h2>
+    </div>
+    <div class="testi-grid reveal">
+      <div class="testi">
+        <div class="testi-stars"><div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div></div>
+        <q>The quality surpassed even what I'd seen in the Architectural Digest features that first made me aware of Sonam. Our living room is transformed — the rug is genuinely the most admired thing in our home.</q>
+        <div class="testi-sig">
+          <div class="avatar av1">CL</div>
+          <div><div class="author-n">Catherine L.</div><div class="author-r">Interior Designer, London</div></div>
+        </div>
+      </div>
+      <div class="testi">
+        <div class="testi-stars"><div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div></div>
+        <q>We specified a custom 14 × 18 ft piece for a client's Manhattan residence. The design team was exceptional — responsive, precise, and deeply knowledgeable. The finished rug arrived flawless.</q>
+        <div class="testi-sig">
+          <div class="avatar av2">MR</div>
+          <div><div class="author-n">Marcus R.</div><div class="author-r">Principal, MR Architecture, NYC</div></div>
+        </div>
+      </div>
+      <div class="testi">
+        <div class="testi-stars"><div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div></div>
+        <q>I've sourced rugs from Iran, Morocco, and Turkey. Nothing compares to the depth and feel of Sonam's Tibetan wool. It is worth every penny and worth every week of waiting.</q>
+        <div class="testi-sig">
+          <div class="avatar av3">SB</div>
+          <div><div class="author-n">Sophia B.</div><div class="author-r">Collector & Homeowner, Paris</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq" id="faq">
+  <div class="container">
+    <div class="faq-inner">
+      <div class="faq-left reveal-l">
+        <p class="eyebrow">Questions</p>
+        <h2 class="display">Everything<br>you might<br><em>want to know.</em></h2>
+        <p style="margin-top:32px;font-size:15px;font-weight:300;color:var(--ink-s);line-height:1.8">Can't find your answer here? Write to us at <a href="mailto:sonamrug@gmail.com" style="color:var(--gold);text-decoration:none">sonamrug@gmail.com</a> and our team will respond within 24 hours.</p>
+      </div>
+      <div class="faq-right reveal-r">
+        <details open>
+          <summary>How long does a custom rug take to make? <div class="sum-icon">+</div></summary>
+          <p>Timelines depend on size and complexity. A standard 8 × 10 ft rug typically takes 10–16 weeks. Larger or more intricate pieces may take up to 6 months. We keep you updated throughout the process with photos from the workshop.</p>
+        </details>
+        <details>
+          <summary>Can I order a completely custom design? <div class="sum-icon">+</div></summary>
+          <p>Absolutely. We welcome fully bespoke commissions. Share your space dimensions, design inspiration, and preferred colour palette and our team will create a digital mockup before any weaving begins.</p>
+        </details>
+        <details>
+          <summary>What materials do you use? <div class="sum-icon">+</div></summary>
+          <p>We use hand-spun Himalayan highland wool and natural silk sourced from trusted suppliers in Nepal and Tibet. All dyes are plant- or mineral-based. We do not use synthetic fibres or chemical dyes in any of our carpets.</p>
+        </details>
+        <details>
+          <summary>Do you ship internationally? <div class="sum-icon">+</div></summary>
+          <p>Yes — we ship to over 60 countries worldwide. All shipments are fully insured, carefully packed with archival materials, and come with a certificate of authenticity and care guide.</p>
+        </details>
+        <details>
+          <summary>How do I care for my Sonam rug? <div class="sum-icon">+</div></summary>
+          <p>Vacuum regularly with a low suction setting. Rotate the rug every 1–2 years to ensure even wear. For deep cleaning, we recommend professional rug washing every 3–5 years. Avoid direct sunlight and damp conditions.</p>
+        </details>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section" id="contact">
+  <div class="container" style="position:relative;z-index:2;text-align:center">
+    <p class="eyebrow" style="text-align:center">Commission Your Rug</p>
+    <h2 class="display">Let's create something<br><em>truly yours.</em></h2>
+    <p class="cta-sub">Leave your email and our design team will be in touch within one business day.</p>
+    <div class="cta-form">
+      <input class="cta-input" type="email" placeholder="your@email.com">
+      <button class="cta-submit">Enquire</button>
+    </div>
+    <p class="cta-note">Or write directly to sonamrug@gmail.com · +977 9801020393</p>
+    <div class="cta-badges">
+      <div class="badge">GoodWeave Certified</div>
+      <div class="badge">Fair Trade Workshop</div>
+      <div class="badge">No Child Labour</div>
+      <div class="badge">Ships Worldwide</div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-top">
+    <div class="footer-brand">
+      <div class="logo">Sonam Rugs</div>
+      <p>Handmade Tibetan carpets crafted with care in Kathmandu, Nepal. Delivering heirloom quality to homes around the world since 2001.</p>
+    </div>
+    <div class="footer-col">
+      <h5>Collections</h5>
+      <ul>
+        <li><a href="https://sonamrugs.com/products/" target="_blank">Natural</a></li>
+        <li><a href="https://sonamrugs.com/products/" target="_blank">High End Silk</a></li>
+        <li><a href="https://sonamrugs.com/products/" target="_blank">Flat Weave</a></li>
+        <li><a href="https://sonamrugs.com/products/" target="_blank">Round Rugs</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h5>Company</h5>
+      <ul>
+        <li><a href="https://sonamrugs.com/about/" target="_blank">About Us</a></li>
+        <li><a href="https://sonamrugs.com/process/" target="_blank">Our Process</a></li>
+        <li><a href="https://sonamrugs.com/gallery/" target="_blank">Gallery</a></li>
+        <li><a href="https://sonamrugs.com/contact/" target="_blank">Contact</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h5>Contact</h5>
+      <ul>
+        <li><a href="mailto:sonamrug@gmail.com">sonamrug@gmail.com</a></li>
+        <li><a href="tel:+9779801020393">+977 9801020393</a></li>
+        <li><a href="https://www.instagram.com/silkroadrugs.nepal/" target="_blank">Instagram</a></li>
+        <li><a style="color:rgba(250,248,244,0.25)">Boudha, Kathmandu, Nepal</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2026 Sonam Rugs Nepal. All rights reserved.</p>
+    <div class="goodweave">GoodWeave Nepal Foundation Member</div>
+  </div>
+</footer>
+
+<script>
+// Cursor
+const cur = document.getElementById('cursor');
+const ring = document.getElementById('ring');
+let mx=0,my=0,rx=0,ry=0;
+document.addEventListener('mousemove',e=>{mx=e.clientX;my=e.clientY;cur.style.left=mx+'px';cur.style.top=my+'px'});
+(function lerp(){rx+=(mx-rx)*0.12;ry+=(my-ry)*0.12;ring.style.left=rx+'px';ring.style.top=ry+'px';requestAnimationFrame(lerp)})();
+
+// Nav scroll
+const nav=document.getElementById('nav');
+window.addEventListener('scroll',()=>nav.classList.toggle('scrolled',scrollY>60));
+
+// Reveal
+const obs=new IntersectionObserver(entries=>{
+  entries.forEach((e,i)=>{
+    if(e.isIntersecting){
+      e.target.style.transitionDelay=(i*0.08)+'s';
+      e.target.classList.add('vis');
+      obs.unobserve(e.target);
+    }
+  });
+},{threshold:0.08});
+document.querySelectorAll('.reveal,.reveal-l,.reveal-r').forEach(el=>obs.observe(el));
+
+// FAQ icon toggle
+document.querySelectorAll('details').forEach(d=>{
+  d.addEventListener('toggle',()=>{
+    d.querySelector('.sum-icon').textContent=d.open?'−':'+';
+  });
+});
+</script>
+</body>
+</html>
