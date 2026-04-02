@@ -3,773 +3,1661 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Sonam Rugs — Handmade Tibetan Carpets</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<title>Amayangri Retreat Home — Boudhanath, Kathmandu</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Cinzel:wght@400;500&family=Jost:wght@300;400&display=swap" rel="stylesheet">
 <style>
-*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-:root{
-  --sand:    #f2ede6;
-  --sand-d:  #e8e0d4;
-  --bone:    #faf8f4;
-  --ink:     #1c1916;
-  --ink-s:   #5a544c;
-  --ink-m:   #9e968b;
-  --gold:    #9a7c4f;
-  --gold-l:  #c9a96e;
-  --gold-ll: #f0e5d0;
-  --line:    rgba(28,25,22,0.10);
-  --r: 2px;
-}
+  :root {
+    --warm-black: #1a1410;
+    --deep-brown: #3a2808;
+    --ochre: #c8a870;
+    --pale-ochre: #e8dcc8;
+    --cream: #f5ede0;
+    --forest: #2d4228;
+    --mist: #9ab0c2;
+    --gold: #d4a850;
+    --rust: #8a3820;
+    --stone: #8a7558;
+  }
 
-html{scroll-behavior:smooth}
+  html { scroll-behavior: smooth; }
 
-body{
-  font-family:'Jost',sans-serif;
-  background:var(--bone);
-  color:var(--ink);
-  font-size:16px;
-  line-height:1.6;
-  -webkit-font-smoothing:antialiased;
-  overflow-x:hidden;
-  cursor:none;
-}
+  body {
+    background: var(--warm-black);
+    color: var(--cream);
+    font-family: 'Jost', sans-serif;
+    font-weight: 300;
+    overflow-x: hidden;
+    cursor: none;
+  }
 
-/* ── CUSTOM CURSOR ── */
-.cursor{
-  position:fixed;width:10px;height:10px;border-radius:50%;
-  background:var(--gold);pointer-events:none;z-index:9999;
-  transform:translate(-50%,-50%);
-  transition:transform 0.1s,width 0.25s,height 0.25s,background 0.25s;
-}
-.cursor-ring{
-  position:fixed;width:36px;height:36px;border-radius:50%;
-  border:1px solid var(--gold-l);pointer-events:none;z-index:9998;
-  transform:translate(-50%,-50%);
-  transition:transform 0.18s ease,width 0.3s,height 0.3s,opacity 0.3s;
-  opacity:0.5;
-}
-body:hover .cursor{opacity:1}
+  /* CUSTOM CURSOR */
+  .cursor {
+    position: fixed;
+    width: 8px; height: 8px;
+    background: var(--gold);
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 9999;
+    transition: transform 0.15s ease;
+    mix-blend-mode: difference;
+  }
+  .cursor-ring {
+    position: fixed;
+    width: 36px; height: 36px;
+    border: 1px solid var(--ochre);
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 9998;
+    transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    opacity: 0.6;
+  }
 
-/* ── NAV ── */
-nav{
-  position:fixed;top:0;left:0;right:0;z-index:500;
-  display:flex;align-items:center;justify-content:space-between;
-  padding:28px 56px;
-  transition:background 0.4s,padding 0.4s,border 0.4s;
-}
-nav.scrolled{
-  background:rgba(250,248,244,0.92);backdrop-filter:blur(20px);
-  padding:18px 56px;border-bottom:1px solid var(--line);
-}
-.nav-logo{
-  font-family:'Cormorant Garamond',serif;
-  font-size:24px;font-weight:400;letter-spacing:0.06em;
-  text-transform:uppercase;color:var(--bone);text-decoration:none;
-  transition:color 0.3s;
-}
-nav.scrolled .nav-logo{color:var(--ink)}
-.nav-links{display:flex;gap:40px;list-style:none}
-.nav-links a{
-  font-size:11px;font-weight:400;letter-spacing:0.18em;text-transform:uppercase;
-  color:rgba(250,248,244,0.7);text-decoration:none;transition:color 0.2s;
-}
-nav.scrolled .nav-links a{color:var(--ink-s)}
-.nav-links a:hover{color:var(--gold-l) !important}
-.nav-btn{
-  font-size:11px;letter-spacing:0.15em;text-transform:uppercase;
-  padding:11px 26px;border:1px solid rgba(250,248,244,0.5);
-  color:var(--bone);text-decoration:none;
-  transition:background 0.25s,color 0.25s,border 0.25s;
-}
-nav.scrolled .nav-btn{border-color:var(--gold);color:var(--gold)}
-.nav-btn:hover{background:var(--gold);border-color:var(--gold);color:var(--bone) !important}
+  /* NAV */
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    padding: 28px 48px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    mix-blend-mode: normal;
+  }
+  nav::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to bottom, rgba(26,20,16,0.85) 0%, transparent 100%);
+    pointer-events: none;
+  }
+  .nav-logo {
+    font-family: 'Cinzel', serif;
+    font-size: 13px;
+    letter-spacing: 4px;
+    color: var(--gold);
+    text-decoration: none;
+    position: relative;
+  }
+  .nav-links {
+    display: flex;
+    gap: 40px;
+    list-style: none;
+    position: relative;
+  }
+  .nav-links a {
+    font-family: 'Jost', sans-serif;
+    font-size: 11px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--pale-ochre);
+    text-decoration: none;
+    opacity: 0.8;
+    transition: opacity 0.3s;
+  }
+  .nav-links a:hover { opacity: 1; color: var(--gold); }
 
-/* ── HERO ── */
-.hero{
-  position:relative;min-height:100vh;
-  display:flex;align-items:flex-end;
-  overflow:hidden;
-}
-.hero-bg{
-  position:absolute;inset:0;
-  background:
-    linear-gradient(to bottom, rgba(28,25,22,0.2) 0%, rgba(28,25,22,0.55) 100%),
-    url('https://images.unsplash.com/photo-1600166898405-da9535204843?w=1800&q=80') center/cover no-repeat;
-}
-.hero-grain{
-  position:absolute;inset:0;
-  background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
-  opacity:0.4;pointer-events:none;
-}
-.hero-content{
-  position:relative;z-index:2;
-  padding:0 80px 100px;
-  max-width:860px;
-}
-.hero-eyebrow{
-  font-size:11px;letter-spacing:0.22em;text-transform:uppercase;
-  color:var(--gold-l);font-weight:400;margin-bottom:28px;
-  display:flex;align-items:center;gap:16px;
-  animation:fadeUp 1s 0.2s both;
-}
-.hero-eyebrow::before{content:'';width:40px;height:1px;background:var(--gold-l)}
-.hero h1{
-  font-family:'Cormorant Garamond',serif;
-  font-size:clamp(56px,7.5vw,112px);
-  font-weight:300;line-height:1.0;letter-spacing:-0.01em;
-  color:var(--bone);margin-bottom:36px;
-  animation:fadeUp 1s 0.35s both;
-}
-.hero h1 em{font-style:italic;color:var(--gold-l)}
-.hero-sub{
-  font-size:15px;font-weight:300;letter-spacing:0.04em;
-  color:rgba(250,248,244,0.65);max-width:420px;line-height:1.8;
-  margin-bottom:52px;
-  animation:fadeUp 1s 0.5s both;
-}
-.hero-actions{
-  display:flex;gap:20px;align-items:center;
-  animation:fadeUp 1s 0.65s both;
-}
-.btn-gold{
-  background:var(--gold);color:var(--bone);
-  padding:15px 36px;border:none;
-  font-family:'Jost',sans-serif;font-size:11px;font-weight:400;
-  letter-spacing:0.18em;text-transform:uppercase;
-  text-decoration:none;cursor:none;
-  transition:background 0.25s,transform 0.2s;
-}
-.btn-gold:hover{background:var(--gold-l);transform:translateY(-2px)}
-.btn-ghost{
-  font-size:11px;letter-spacing:0.18em;text-transform:uppercase;
-  color:rgba(250,248,244,0.6);text-decoration:none;
-  display:flex;align-items:center;gap:10px;
-  transition:color 0.2s;
-}
-.btn-ghost:hover{color:var(--bone)}
-.hero-scroll{
-  position:absolute;bottom:48px;right:64px;z-index:3;
-  display:flex;flex-direction:column;align-items:center;gap:12px;
-  animation:fadeUp 1s 0.9s both;
-}
-.scroll-text{font-size:10px;letter-spacing:0.22em;text-transform:uppercase;color:rgba(250,248,244,0.4);writing-mode:vertical-lr}
-.scroll-line{width:1px;height:60px;background:linear-gradient(to bottom,rgba(250,248,244,0.3),transparent);animation:scrollPulse 2s ease infinite}
-@keyframes scrollPulse{0%,100%{transform:scaleY(1);opacity:0.4}50%{transform:scaleY(0.5);opacity:0.8}}
+  /* HERO */
+  .hero {
+    height: 100vh;
+    position: relative;
+    display: flex;
+    align-items: flex-end;
+    overflow: hidden;
+  }
+  .hero-bg {
+    position: absolute;
+    inset: 0;
+  }
+  /* SVG scene as hero background */
+  .hero-svg-wrap {
+    position: absolute;
+    inset: 0;
+    width: 100%; height: 100%;
+  }
+  .hero-svg-wrap svg {
+    width: 100%; height: 100%;
+    object-fit: cover;
+  }
+  .hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      to bottom,
+      rgba(26,20,16,0.1) 0%,
+      rgba(26,20,16,0.0) 40%,
+      rgba(26,20,16,0.6) 75%,
+      rgba(26,20,16,1) 100%
+    );
+  }
+  .hero-content {
+    position: relative;
+    padding: 0 48px 80px;
+    max-width: 700px;
+  }
+  .hero-eyebrow {
+    font-family: 'Jost', sans-serif;
+    font-size: 10px;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 20px;
+    opacity: 0;
+    animation: fadeUp 1s ease 0.5s forwards;
+  }
+  .hero-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(52px, 8vw, 96px);
+    font-weight: 300;
+    line-height: 0.95;
+    color: var(--cream);
+    margin-bottom: 28px;
+    opacity: 0;
+    animation: fadeUp 1s ease 0.8s forwards;
+  }
+  .hero-title em {
+    font-style: italic;
+    color: var(--ochre);
+  }
+  .hero-sub {
+    font-size: 13px;
+    letter-spacing: 2px;
+    color: var(--pale-ochre);
+    opacity: 0;
+    animation: fadeUp 1s ease 1.1s forwards;
+    margin-bottom: 40px;
+  }
+  .hero-cta {
+    display: inline-block;
+    font-family: 'Cinzel', serif;
+    font-size: 10px;
+    letter-spacing: 4px;
+    color: var(--warm-black);
+    background: var(--gold);
+    padding: 14px 36px;
+    text-decoration: none;
+    transition: all 0.3s;
+    opacity: 0;
+    animation: fadeUp 1s ease 1.4s forwards;
+  }
+  .hero-cta:hover { background: var(--ochre); transform: translateY(-2px); }
 
-/* ── MARQUEE ── */
-.marquee-bar{
-  background:var(--gold);
-  padding:14px 0;overflow:hidden;
-  display:flex;
-}
-.marquee-track{
-  display:flex;gap:0;white-space:nowrap;
-  animation:marquee 22s linear infinite;
-}
-.marquee-item{
-  font-size:11px;letter-spacing:0.2em;text-transform:uppercase;
-  color:var(--bone);padding:0 40px;
-  display:flex;align-items:center;gap:40px;
-}
-.marquee-item::after{content:'◆';font-size:7px;opacity:0.5}
-@keyframes marquee{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+  .hero-scroll {
+    position: absolute;
+    bottom: 40px; right: 48px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    opacity: 0;
+    animation: fadeIn 1s ease 2s forwards;
+  }
+  .hero-scroll span {
+    font-size: 9px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--ochre);
+    writing-mode: vertical-rl;
+  }
+  .scroll-line {
+    width: 1px;
+    height: 60px;
+    background: linear-gradient(to bottom, var(--ochre), transparent);
+    animation: scrollPulse 2s ease infinite;
+  }
 
-/* ── SHARED SECTION ── */
-section{padding:120px 0}
-.container{max-width:1200px;margin:0 auto;padding:0 56px}
-.eyebrow{
-  font-size:10px;letter-spacing:0.25em;text-transform:uppercase;
-  color:var(--gold);font-weight:400;margin-bottom:18px;
-}
-.display{
-  font-family:'Cormorant Garamond',serif;
-  font-size:clamp(36px,4.5vw,58px);
-  font-weight:300;line-height:1.1;letter-spacing:-0.01em;
-}
-.display em{font-style:italic;color:var(--gold)}
+  /* PRAYER FLAGS STRIP */
+  .flags-strip {
+    background: var(--warm-black);
+    padding: 20px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0;
+    overflow: hidden;
+  }
+  .flag {
+    width: 48px;
+    height: 36px;
+    position: relative;
+  }
+  .flag::after {
+    content: '';
+    position: absolute;
+    left: 50%; top: 0;
+    transform: translateX(-50%);
+    width: 1px;
+    height: 36px;
+    background: rgba(200,160,112,0.3);
+  }
 
-/* ── INTRO SPLIT ── */
-.intro{background:var(--bone)}
-.intro-grid{
-  display:grid;grid-template-columns:1fr 1fr;gap:0;
-  border:1px solid var(--line);
-}
-.intro-left{padding:80px 72px;display:flex;flex-direction:column;justify-content:center}
-.intro-body{
-  font-size:16px;font-weight:300;color:var(--ink-s);
-  line-height:1.85;margin-top:32px;margin-bottom:40px;
-}
-.stat-row{display:flex;gap:40px;padding-top:40px;border-top:1px solid var(--line)}
-.stat .num{font-family:'Cormorant Garamond',serif;font-size:42px;font-weight:300;color:var(--gold);line-height:1}
-.stat .lbl{font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:var(--ink-m);margin-top:6px}
-.intro-right{position:relative;overflow:hidden;min-height:560px}
-.intro-right img{width:100%;height:100%;object-fit:cover;display:block;transition:transform 0.8s ease}
-.intro-right:hover img{transform:scale(1.04)}
-.intro-right-caption{
-  position:absolute;bottom:0;left:0;right:0;
-  padding:24px 28px;
-  background:linear-gradient(to top,rgba(28,25,22,0.7),transparent);
-  font-size:11px;letter-spacing:0.15em;text-transform:uppercase;color:rgba(250,248,244,0.7);
-}
+  /* INTRO SECTION */
+  .intro {
+    background: var(--warm-black);
+    padding: 120px 48px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: center;
+    max-width: 1400px;
+    margin: 0 auto;
+  }
+  .intro-text h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(36px, 4vw, 56px);
+    font-weight: 300;
+    line-height: 1.15;
+    color: var(--cream);
+    margin-bottom: 32px;
+  }
+  .intro-text h2 em { font-style: italic; color: var(--ochre); }
+  .intro-text p {
+    font-size: 15px;
+    line-height: 1.9;
+    color: rgba(245,237,224,0.7);
+    margin-bottom: 20px;
+  }
+  .intro-details {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+    margin-top: 48px;
+  }
+  .detail-item {
+    border-top: 1px solid rgba(200,168,112,0.2);
+    padding-top: 16px;
+  }
+  .detail-label {
+    font-size: 9px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 6px;
+  }
+  .detail-value {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 18px;
+    color: var(--pale-ochre);
+  }
 
-/* ── COLLECTIONS ── */
-.collections{background:var(--sand)}
-.col-header{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:64px}
-.col-link{font-size:11px;letter-spacing:0.18em;text-transform:uppercase;color:var(--gold);text-decoration:none;display:flex;align-items:center;gap:10px}
-.col-link::after{content:'→';transition:transform 0.2s}
-.col-link:hover::after{transform:translateX(4px)}
-.col-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px}
-.col-item{position:relative;overflow:hidden;aspect-ratio:3/4;cursor:none}
-.col-item img{width:100%;height:100%;object-fit:cover;transition:transform 0.7s ease}
-.col-item:hover img{transform:scale(1.06)}
-.col-overlay{
-  position:absolute;inset:0;
-  background:linear-gradient(to top,rgba(28,25,22,0.75) 0%,rgba(28,25,22,0) 55%);
-  display:flex;flex-direction:column;justify-content:flex-end;
-  padding:32px 28px;
-}
-.col-name{font-family:'Cormorant Garamond',serif;font-size:24px;font-weight:300;color:var(--bone)}
-.col-sub{font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:rgba(250,248,244,0.55);margin-top:4px}
-.col-tag{
-  position:absolute;top:24px;left:24px;
-  background:var(--gold);color:var(--bone);
-  font-size:10px;letter-spacing:0.18em;text-transform:uppercase;
-  padding:5px 12px;
-}
+  /* ARCHITECTURAL SVG in intro */
+  .intro-drawing {
+    position: relative;
+  }
+  .intro-drawing svg {
+    width: 100%;
+    filter: sepia(10%);
+  }
+  .drawing-label {
+    position: absolute;
+    bottom: -24px;
+    left: 0;
+    font-size: 9px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--stone);
+  }
 
-/* ── FEATURES ── */
-.features{background:var(--ink);color:var(--bone)}
-.features .eyebrow{color:var(--gold-l)}
-.features .display{color:var(--bone)}
-.features-body{
-  display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start;
-  margin-top:72px;
-}
-.features-left img{width:100%;aspect-ratio:4/5;object-fit:cover;display:block}
-.features-right{display:flex;flex-direction:column;gap:0}
-.feat{
-  padding:36px 0;border-bottom:1px solid rgba(250,248,244,0.08);
-  display:grid;grid-template-columns:48px 1fr;gap:24px;align-items:start;
-  transition:background 0.2s;
-}
-.feat:first-child{padding-top:0}
-.feat-num{font-family:'Cormorant Garamond',serif;font-size:13px;color:var(--gold);letter-spacing:0.1em}
-.feat h3{font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:300;color:var(--bone);margin-bottom:10px}
-.feat p{font-size:14px;font-weight:300;color:rgba(250,248,244,0.5);line-height:1.75}
+  /* SPACES SECTION */
+  .spaces {
+    background: var(--cream);
+    color: var(--warm-black);
+    padding: 120px 48px;
+  }
+  .section-header {
+    text-align: center;
+    margin-bottom: 80px;
+  }
+  .section-eyebrow {
+    font-size: 9px;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    color: var(--rust);
+    margin-bottom: 16px;
+  }
+  .section-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(32px, 4vw, 52px);
+    font-weight: 300;
+    color: var(--deep-brown);
+    line-height: 1.15;
+  }
+  .section-title em { font-style: italic; }
 
-/* ── PROCESS ── */
-.process{background:var(--sand-d)}
-.process-steps{
-  display:grid;grid-template-columns:repeat(6,1fr);gap:0;
-  border:1px solid var(--line);margin-top:64px;
-}
-.step{
-  padding:40px 28px;border-right:1px solid var(--line);
-  transition:background 0.25s;
-}
-.step:last-child{border-right:none}
-.step:hover{background:var(--bone)}
-.step-n{font-family:'Cormorant Garamond',serif;font-size:42px;font-weight:300;color:var(--gold-ll);margin-bottom:16px;line-height:1}
-.step h4{font-family:'Cormorant Garamond',serif;font-size:18px;font-weight:400;margin-bottom:10px}
-.step p{font-size:13px;font-weight:300;color:var(--ink-m);line-height:1.65}
+  .spaces-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2px;
+    max-width: 1400px;
+    margin: 0 auto;
+  }
+  .space-card {
+    position: relative;
+    overflow: hidden;
+    background: var(--deep-brown);
+    aspect-ratio: 3/4;
+    cursor: none;
+  }
+  .space-card-bg {
+    position: absolute;
+    inset: 0;
+    transition: transform 0.6s cubic-bezier(0.25,0.46,0.45,0.94);
+  }
+  .space-card:hover .space-card-bg { transform: scale(1.05); }
+  .space-card-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(26,20,16,0.92) 0%, rgba(26,20,16,0.1) 60%);
+  }
+  .space-card-content {
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    padding: 28px 24px;
+  }
+  .space-number {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 11px;
+    letter-spacing: 3px;
+    color: var(--gold);
+    margin-bottom: 8px;
+  }
+  .space-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 22px;
+    font-weight: 300;
+    color: var(--cream);
+    margin-bottom: 8px;
+    line-height: 1.1;
+  }
+  .space-desc {
+    font-size: 11px;
+    letter-spacing: 1px;
+    color: rgba(245,237,224,0.6);
+    line-height: 1.6;
+  }
 
-/* ── TESTIMONIALS ── */
-.testimonials{background:var(--bone)}
-.testi-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:64px}
-.testi{
-  border:1px solid var(--line);padding:44px 40px;
-  display:flex;flex-direction:column;gap:28px;
-  transition:transform 0.3s,box-shadow 0.3s;
-  background:var(--bone);
-}
-.testi:hover{transform:translateY(-6px);box-shadow:0 20px 60px rgba(28,25,22,0.08)}
-.testi-stars{display:flex;gap:4px}
-.star{width:14px;height:14px;background:var(--gold);clip-path:polygon(50% 0%,61% 35%,98% 35%,68% 57%,79% 91%,50% 70%,21% 91%,32% 57%,2% 35%,39% 35%)}
-.testi q{
-  font-family:'Cormorant Garamond',serif;font-style:italic;
-  font-size:19px;font-weight:300;line-height:1.55;color:var(--ink);
-  quotes:none;flex:1;
-}
-.testi-sig{display:flex;align-items:center;gap:16px;padding-top:24px;border-top:1px solid var(--line)}
-.avatar{width:42px;height:42px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:500;flex-shrink:0}
-.av1{background:#dfe6f0;color:#334d6e}
-.av2{background:#f0e8de;color:#7a4e2d}
-.av3{background:var(--gold-ll);color:var(--gold)}
-.author-n{font-weight:500;font-size:14px}
-.author-r{font-size:12px;color:var(--ink-m);letter-spacing:0.04em}
+  /* Illustrated room SVGs as card backgrounds */
+  .room-svg {
+    width: 100%; height: 100%;
+    object-fit: cover;
+  }
 
-/* ── FAQ ── */
-.faq{background:var(--sand)}
-.faq-inner{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start}
-.faq-left{}
-.faq-right{padding-top:12px}
-details{border-bottom:1px solid var(--line)}
-details:first-of-type{border-top:1px solid var(--line)}
-summary{
-  padding:22px 0;font-size:15px;font-weight:400;letter-spacing:0.02em;
-  cursor:none;list-style:none;
-  display:flex;justify-content:space-between;align-items:center;
-  user-select:none;
-}
-summary::-webkit-details-marker{display:none}
-.sum-icon{
-  width:24px;height:24px;border-radius:50%;border:1px solid var(--line);
-  display:flex;align-items:center;justify-content:center;
-  font-size:15px;font-weight:300;color:var(--ink-m);flex-shrink:0;
-  transition:background 0.2s,color 0.2s;
-}
-details[open] .sum-icon{background:var(--gold);color:var(--bone);border-color:var(--gold)}
-details p{
-  font-size:14px;font-weight:300;color:var(--ink-s);
-  line-height:1.8;padding-bottom:22px;
-}
+  /* PHILOSOPHY SECTION */
+  .philosophy {
+    background: var(--forest);
+    padding: 140px 48px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .philosophy::before {
+    content: 'अमायाङ्ग्री';
+    position: absolute;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 200px;
+    color: rgba(255,255,255,0.03);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    white-space: nowrap;
+    pointer-events: none;
+  }
+  .philosophy-inner {
+    max-width: 800px;
+    margin: 0 auto;
+    position: relative;
+  }
+  .philosophy-ornament {
+    width: 1px;
+    height: 60px;
+    background: var(--gold);
+    margin: 0 auto 40px;
+  }
+  .philosophy-quote {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(24px, 3.5vw, 42px);
+    font-weight: 300;
+    font-style: italic;
+    line-height: 1.5;
+    color: var(--cream);
+    margin-bottom: 40px;
+  }
+  .philosophy-attribution {
+    font-size: 10px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: var(--ochre);
+  }
+  .philosophy-pillars {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 60px;
+    margin-top: 100px;
+    text-align: left;
+  }
+  .pillar-icon {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 36px;
+    color: var(--gold);
+    margin-bottom: 20px;
+  }
+  .pillar-title {
+    font-family: 'Cinzel', serif;
+    font-size: 12px;
+    letter-spacing: 3px;
+    color: var(--ochre);
+    margin-bottom: 14px;
+  }
+  .pillar-text {
+    font-size: 13px;
+    line-height: 1.9;
+    color: rgba(245,237,224,0.65);
+  }
 
-/* ── CTA ── */
-.cta-section{
-  background:linear-gradient(135deg,#1c1916 0%,#2e261e 50%,#1c1916 100%);
-  padding:140px 0;text-align:center;position:relative;overflow:hidden;
-}
-.cta-section::before{
-  content:'';position:absolute;inset:0;
-  background:radial-gradient(ellipse 80% 60% at 50% 50%,rgba(154,124,79,0.12),transparent);
-}
-.cta-section .eyebrow{color:var(--gold-l)}
-.cta-section .display{color:var(--bone);max-width:640px;margin:0 auto 20px}
-.cta-sub{font-size:16px;font-weight:300;color:rgba(250,248,244,0.5);margin-bottom:52px;letter-spacing:0.03em}
-.cta-form{display:flex;gap:0;max-width:480px;margin:0 auto 16px;border:1px solid rgba(250,248,244,0.15)}
-.cta-input{
-  flex:1;background:transparent;border:none;
-  padding:16px 24px;font-family:'Jost',sans-serif;font-size:14px;
-  color:var(--bone);outline:none;
-}
-.cta-input::placeholder{color:rgba(250,248,244,0.3)}
-.cta-submit{
-  background:var(--gold);color:var(--bone);border:none;
-  padding:16px 28px;font-family:'Jost',sans-serif;font-size:11px;
-  letter-spacing:0.18em;text-transform:uppercase;cursor:none;
-  transition:background 0.2s;
-}
-.cta-submit:hover{background:var(--gold-l)}
-.cta-note{font-size:12px;color:rgba(250,248,244,0.25);letter-spacing:0.06em}
-.cta-badges{display:flex;justify-content:center;gap:40px;margin-top:64px;padding-top:64px;border-top:1px solid rgba(250,248,244,0.06)}
-.badge{font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:rgba(250,248,244,0.3);display:flex;align-items:center;gap:10px}
-.badge::before{content:'✓';color:var(--gold);font-size:14px}
+  /* FLOOR PLAN SECTION */
+  .floorplan {
+    background: var(--pale-ochre);
+    padding: 120px 48px;
+    color: var(--deep-brown);
+  }
+  .floorplan .section-header { margin-bottom: 60px; }
+  .floorplan .section-title { color: var(--deep-brown); }
+  .floorplan .section-eyebrow { color: var(--rust); }
+  .floorplan-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 80px;
+    align-items: start;
+  }
+  .floorplan-svg-wrap svg {
+    width: 100%;
+  }
+  .floorplan-legend {
+    padding-top: 20px;
+  }
+  .floorplan-legend h3 {
+    font-family: 'Cinzel', serif;
+    font-size: 11px;
+    letter-spacing: 3px;
+    color: var(--stone);
+    margin-bottom: 32px;
+  }
+  .legend-item {
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+    margin-bottom: 28px;
+    padding-bottom: 28px;
+    border-bottom: 1px solid rgba(138,117,88,0.2);
+  }
+  .legend-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 28px;
+    color: var(--gold);
+    line-height: 1;
+    min-width: 32px;
+  }
+  .legend-info h4 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 18px;
+    color: var(--deep-brown);
+    margin-bottom: 4px;
+    font-weight: 400;
+  }
+  .legend-info p {
+    font-size: 12px;
+    line-height: 1.7;
+    color: var(--stone);
+  }
 
-/* ── FOOTER ── */
-footer{background:var(--ink);padding:64px 56px 40px}
-.footer-top{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:64px;margin-bottom:56px}
-.footer-brand .logo{font-family:'Cormorant Garamond',serif;font-size:26px;font-weight:400;letter-spacing:0.06em;text-transform:uppercase;color:var(--bone);margin-bottom:16px}
-.footer-brand p{font-size:13px;font-weight:300;color:rgba(250,248,244,0.35);line-height:1.8}
-.footer-col h5{font-size:10px;letter-spacing:0.22em;text-transform:uppercase;color:var(--gold);margin-bottom:20px}
-.footer-col ul{list-style:none;display:flex;flex-direction:column;gap:10px}
-.footer-col a{font-size:13px;font-weight:300;color:rgba(250,248,244,0.4);text-decoration:none;transition:color 0.2s}
-.footer-col a:hover{color:var(--bone)}
-.footer-bottom{border-top:1px solid rgba(250,248,244,0.06);padding-top:28px;display:flex;justify-content:space-between;align-items:center}
-.footer-bottom p{font-size:12px;color:rgba(250,248,244,0.2)}
-.goodweave{font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:rgba(250,248,244,0.25);display:flex;align-items:center;gap:10px}
-.goodweave::before{content:'✓';color:var(--gold-l)}
+  /* LOCATION SECTION */
+  .location {
+    background: var(--warm-black);
+    padding: 120px 48px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    max-width: 1400px;
+    margin: 0 auto;
+    align-items: center;
+  }
+  .location-text h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(32px, 4vw, 52px);
+    font-weight: 300;
+    color: var(--cream);
+    margin-bottom: 28px;
+    line-height: 1.15;
+  }
+  .location-text h2 em { font-style: italic; color: var(--ochre); }
+  .location-text p {
+    font-size: 14px;
+    line-height: 1.9;
+    color: rgba(245,237,224,0.65);
+    margin-bottom: 16px;
+  }
+  .location-facts {
+    margin-top: 48px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+  .location-fact {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    font-size: 13px;
+    color: var(--pale-ochre);
+  }
+  .location-fact::before {
+    content: '';
+    width: 24px;
+    height: 1px;
+    background: var(--gold);
+    flex-shrink: 0;
+  }
+  .location-map {
+    background: rgba(255,255,255,0.03);
+    border: 1px solid rgba(200,168,112,0.15);
+    padding: 40px;
+    font-family: 'Cormorant Garamond', serif;
+    text-align: center;
+  }
+  .map-compass {
+    font-size: 80px;
+    color: var(--gold);
+    opacity: 0.6;
+    margin-bottom: 20px;
+    display: block;
+    line-height: 1;
+  }
+  .map-label {
+    font-size: 11px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--stone);
+    margin-bottom: 8px;
+  }
+  .map-place {
+    font-size: 28px;
+    color: var(--ochre);
+    font-style: italic;
+    margin-bottom: 4px;
+  }
+  .map-coords {
+    font-size: 11px;
+    color: var(--stone);
+    letter-spacing: 2px;
+  }
+  .map-divider {
+    width: 1px;
+    height: 40px;
+    background: rgba(200,168,112,0.3);
+    margin: 24px auto;
+  }
+  .map-nearby {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    margin-top: 32px;
+    text-align: left;
+  }
+  .nearby-item { border-top: 1px solid rgba(200,168,112,0.15); padding-top: 12px; }
+  .nearby-name { font-size: 13px; color: var(--pale-ochre); margin-bottom: 4px; }
+  .nearby-dist { font-size: 10px; letter-spacing: 2px; color: var(--stone); }
 
-/* ── ANIMATIONS ── */
-@keyframes fadeUp{from{opacity:0;transform:translateY(28px)}to{opacity:1;transform:translateY(0)}}
-.reveal{opacity:0;transform:translateY(28px);transition:opacity 0.8s ease,transform 0.8s ease}
-.reveal.vis{opacity:1;transform:translateY(0)}
-.reveal-l{opacity:0;transform:translateX(-24px);transition:opacity 0.8s ease,transform 0.8s ease}
-.reveal-l.vis{opacity:1;transform:translateX(0)}
-.reveal-r{opacity:0;transform:translateX(24px);transition:opacity 0.8s ease,transform 0.8s ease}
-.reveal-r.vis{opacity:1;transform:translateX(0)}
+  /* ENQUIRE / CONTACT */
+  .enquire {
+    background: var(--deep-brown);
+    padding: 140px 48px;
+    text-align: center;
+  }
+  .enquire h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(36px, 5vw, 72px);
+    font-weight: 300;
+    font-style: italic;
+    color: var(--cream);
+    margin-bottom: 16px;
+  }
+  .enquire p {
+    font-size: 13px;
+    letter-spacing: 2px;
+    color: var(--ochre);
+    margin-bottom: 60px;
+  }
+  .enquire-form {
+    max-width: 560px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+  .form-field {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    text-align: left;
+  }
+  .form-field label {
+    font-size: 9px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--ochre);
+  }
+  .form-field input,
+  .form-field select,
+  .form-field textarea {
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(200,168,112,0.2);
+    color: var(--cream);
+    padding: 14px 16px;
+    font-family: 'Jost', sans-serif;
+    font-size: 13px;
+    font-weight: 300;
+    outline: none;
+    transition: border-color 0.3s;
+    width: 100%;
+  }
+  .form-field input:focus,
+  .form-field select:focus,
+  .form-field textarea:focus {
+    border-color: var(--gold);
+  }
+  .form-field select option { background: var(--deep-brown); }
+  .form-field textarea { resize: vertical; min-height: 100px; }
+  .form-submit {
+    font-family: 'Cinzel', serif;
+    font-size: 11px;
+    letter-spacing: 4px;
+    color: var(--warm-black);
+    background: var(--gold);
+    border: none;
+    padding: 18px 48px;
+    cursor: none;
+    transition: all 0.3s;
+    margin-top: 8px;
+    align-self: center;
+  }
+  .form-submit:hover { background: var(--ochre); transform: translateY(-2px); }
 
-/* ── RESPONSIVE ── */
-@media(max-width:900px){
-  nav{padding:20px 24px}
-  nav.scrolled{padding:14px 24px}
-  .nav-links{display:none}
-  .hero-content{padding:0 28px 80px}
-  .container{padding:0 28px}
-  .intro-grid{grid-template-columns:1fr}
-  .intro-right{min-height:380px}
-  .col-grid{grid-template-columns:1fr 1fr}
-  .features-body{grid-template-columns:1fr;gap:48px}
-  .process-steps{grid-template-columns:repeat(2,1fr)}
-  .step{border-bottom:1px solid var(--line)}
-  .testi-grid{grid-template-columns:1fr}
-  .faq-inner{grid-template-columns:1fr;gap:48px}
-  .footer-top{grid-template-columns:1fr 1fr;gap:40px}
-  .cta-badges{flex-wrap:wrap;gap:24px}
-  body{cursor:auto}
-  .cursor,.cursor-ring{display:none}
-}
+  /* FOOTER */
+  footer {
+    background: var(--warm-black);
+    border-top: 1px solid rgba(200,168,112,0.1);
+    padding: 60px 48px 40px;
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    align-items: start;
+    gap: 40px;
+  }
+  .footer-brand .brand-name {
+    font-family: 'Cinzel', serif;
+    font-size: 14px;
+    letter-spacing: 4px;
+    color: var(--gold);
+    margin-bottom: 8px;
+  }
+  .footer-brand .brand-sub {
+    font-size: 10px;
+    letter-spacing: 2px;
+    color: var(--stone);
+  }
+  .footer-center {
+    text-align: center;
+  }
+  .footer-flags {
+    display: flex;
+    gap: 6px;
+    justify-content: center;
+    margin-bottom: 16px;
+  }
+  .footer-flag {
+    width: 10px; height: 14px;
+    opacity: 0.7;
+  }
+  .footer-tagline {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 12px;
+    font-style: italic;
+    color: var(--stone);
+    letter-spacing: 1px;
+  }
+  .footer-contact {
+    text-align: right;
+    font-size: 11px;
+    color: var(--stone);
+    line-height: 1.9;
+    letter-spacing: 1px;
+  }
+  .footer-bottom {
+    background: var(--warm-black);
+    text-align: center;
+    padding: 20px 48px;
+    font-size: 9px;
+    letter-spacing: 2px;
+    color: rgba(138,117,88,0.4);
+    border-top: 1px solid rgba(200,168,112,0.05);
+  }
+
+  /* ANIMATIONS */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(24px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+  @keyframes scrollPulse {
+    0%, 100% { transform: scaleY(1); opacity: 1; }
+    50% { transform: scaleY(0.6); opacity: 0.4; }
+  }
+
+  /* SCROLL REVEALS */
+  .reveal {
+    opacity: 0;
+    transform: translateY(32px);
+    transition: opacity 0.9s ease, transform 0.9s ease;
+  }
+  .reveal.visible {
+    opacity: 1;
+    transform: none;
+  }
+  .reveal-delay-1 { transition-delay: 0.15s; }
+  .reveal-delay-2 { transition-delay: 0.3s; }
+  .reveal-delay-3 { transition-delay: 0.45s; }
+
+  /* SEPARATOR ORNAMENT */
+  .ornament-sep {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    padding: 16px 0;
+    background: var(--warm-black);
+  }
+  .ornament-line { flex: 1; max-width: 120px; height: 1px; background: rgba(200,168,112,0.2); }
+  .ornament-diamond {
+    width: 6px; height: 6px;
+    background: var(--gold);
+    transform: rotate(45deg);
+  }
+
+  @media (max-width: 900px) {
+    nav { padding: 20px 24px; }
+    .nav-links { gap: 20px; }
+    .hero-content { padding: 0 24px 60px; }
+    .intro, .location { grid-template-columns: 1fr; padding: 80px 24px; }
+    .spaces-grid { grid-template-columns: repeat(2, 1fr); }
+    .philosophy-pillars { grid-template-columns: 1fr; gap: 40px; }
+    .floorplan { padding: 80px 24px; }
+    .floorplan-inner { grid-template-columns: 1fr; }
+    footer { grid-template-columns: 1fr; text-align: center; }
+    .footer-contact { text-align: center; }
+    .form-row { grid-template-columns: 1fr; }
+    .enquire { padding: 80px 24px; }
+  }
 </style>
 </head>
 <body>
 
+<!-- CURSOR -->
 <div class="cursor" id="cursor"></div>
-<div class="cursor-ring" id="ring"></div>
+<div class="cursor-ring" id="cursorRing"></div>
 
 <!-- NAV -->
-<nav id="nav">
-  <a href="#" class="nav-logo">Sonam Rugs</a>
+<nav>
+  <a href="#" class="nav-logo">AMAYANGRI</a>
   <ul class="nav-links">
-    <li><a href="#collections">Collections</a></li>
-    <li><a href="#process">Process</a></li>
-    <li><a href="#about">About</a></li>
-    <li><a href="#faq">FAQ</a></li>
+    <li><a href="#spaces">Spaces</a></li>
+    <li><a href="#floorplan">Plan</a></li>
+    <li><a href="#location">Location</a></li>
+    <li><a href="#enquire">Enquire</a></li>
   </ul>
-  <a href="#contact" class="nav-btn">Enquire Now</a>
 </nav>
 
 <!-- HERO -->
 <section class="hero">
-  <div class="hero-bg"></div>
-  <div class="hero-grain"></div>
+  <div class="hero-svg-wrap">
+    <svg viewBox="0 0 1400 900" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
+      <defs>
+        <linearGradient id="hsky" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stop-color="#1a2a3a"/>
+          <stop offset="50%" stop-color="#2a3d52"/>
+          <stop offset="100%" stop-color="#3a3020"/>
+        </linearGradient>
+        <linearGradient id="hmtgrad" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stop-color="#e8f0f8"/>
+          <stop offset="50%" stop-color="#9ab0c2"/>
+          <stop offset="100%" stop-color="#5a6f7a"/>
+        </linearGradient>
+        <linearGradient id="hsunrise" x1="1" y1="0.3" x2="0" y2="1">
+          <stop offset="0%" stop-color="#f5a030" stop-opacity="0.4"/>
+          <stop offset="60%" stop-color="#c84020" stop-opacity="0.15"/>
+          <stop offset="100%" stop-color="#1a2a3a" stop-opacity="0"/>
+        </linearGradient>
+      </defs>
+      <!-- Sky -->
+      <rect width="1400" height="900" fill="url(#hsky)"/>
+      <!-- Sunrise glow right (east) -->
+      <ellipse cx="1400" cy="280" rx="500" ry="380" fill="url(#hsunrise)"/>
+      <ellipse cx="1400" cy="280" rx="250" ry="200" fill="#f5a030" opacity="0.12"/>
+      <!-- Stars (pre-dawn) -->
+      <g fill="#ffffff" opacity="0.5">
+        <circle cx="100" cy="60" r="1"/><circle cx="230" cy="40" r="0.8"/><circle cx="380" cy="80" r="1.2"/>
+        <circle cx="520" cy="30" r="0.9"/><circle cx="700" cy="55" r="1"/><circle cx="820" cy="25" r="0.7"/>
+        <circle cx="950" cy="70" r="1.1"/><circle cx="1050" cy="40" r="0.8"/><circle cx="1150" cy="60" r="1"/>
+        <circle cx="160" cy="120" r="0.7"/><circle cx="450" cy="130" r="1"/><circle cx="600" cy="100" r="0.8"/>
+        <circle cx="750" cy="140" r="0.9"/><circle cx="900" cy="110" r="0.7"/><circle cx="1100" cy="130" r="1.1"/>
+      </g>
+      <!-- Himalayan Range -->
+      <polygon points="0,500 80,330 160,360 240,270 340,295 420,220 520,190 600,215 700,180 800,205 900,230 980,260 1060,235 1140,255 1220,240 1320,270 1400,290 1400,520 0,520" fill="url(#hmtgrad)"/>
+      <!-- Snow caps -->
+      <polygon points="500,195 530,170 560,180 550,200 520,210" fill="#ffffff" opacity="0.92"/>
+      <polygon points="680,185 710,165 740,178 730,198 700,205" fill="#ffffff" opacity="0.95"/>
+      <polygon points="860,215 890,195 920,210 905,228 875,232" fill="#ffffff" opacity="0.88"/>
+      <polygon points="220,278 250,255 280,268 265,285 235,292" fill="#ffffff" opacity="0.85"/>
+      <polygon points="1040,242 1070,220 1100,235 1085,252 1055,258" fill="#ffffff" opacity="0.82"/>
+      <!-- Mountain shadows -->
+      <polygon points="520,190 550,210 580,215 555,192" fill="#6a8898" opacity="0.4"/>
+      <polygon points="700,180 728,202 748,205 720,182" fill="#6a8898" opacity="0.4"/>
+      <!-- Moon -->
+      <circle cx="280" cy="100" r="28" fill="#e8e0d0" opacity="0.7"/>
+      <circle cx="270" cy="96" r="22" fill="#1a2a3a" opacity="0.85"/>
+      <!-- Forest layers -->
+      <rect x="0" y="498" width="1400" height="100" fill="#1e2e18" opacity="0.9"/>
+      <g fill="#162212" opacity="0.95">
+        <polygon points="0,500 28,440 56,500"/>
+        <polygon points="70,500 100,436 130,500"/>
+        <polygon points="145,498 178,430 211,498"/>
+        <polygon points="225,500 258,438 291,500"/>
+        <polygon points="310,496 345,428 380,496"/>
+        <polygon points="400,500 436,434 472,500"/>
+        <polygon points="490,498 528,430 566,498"/>
+        <polygon points="585,500 622,436 659,500"/>
+        <polygon points="675,496 714,428 753,496"/>
+        <polygon points="770,500 810,434 850,500"/>
+        <polygon points="868,498 908,430 948,498"/>
+        <polygon points="965,500 1005,436 1045,500"/>
+        <polygon points="1060,496 1100,428 1140,496"/>
+        <polygon points="1155,500 1195,434 1235,500"/>
+        <polygon points="1250,498 1290,430 1330,498"/>
+        <polygon points="1345,500 1375,440 1400,500"/>
+      </g>
+      <!-- Ground -->
+      <rect x="0" y="570" width="1400" height="330" fill="#1a1410"/>
+      <!-- Soft candlelight glow from building windows -->
+      <ellipse cx="700" cy="650" rx="320" ry="80" fill="#c87030" opacity="0.08"/>
+      <!-- Building silhouette -->
+      <polygon points="380,660 700,580 1020,660" fill="#0e0a08"/>
+      <rect x="385" y="655" width="630" height="250" fill="#0e0a08"/>
+      <!-- Windows warm glow -->
+      <rect x="420" y="680" width="120" height="130" fill="#c87020" opacity="0.35" rx="2"/>
+      <rect x="580" y="700" width="80" height="70" fill="#c87020" opacity="0.25" rx="2"/>
+      <rect x="720" y="680" width="160" height="130" fill="#c87020" opacity="0.35" rx="2"/>
+      <rect x="910" y="700" width="80" height="60" fill="#c87020" opacity="0.18" rx="2"/>
+      <!-- Door warm glow -->
+      <rect x="635" y="770" width="90" height="90" fill="#c87020" opacity="0.3" rx="2"/>
+      <!-- Ground reflected light -->
+      <rect x="380" y="900" width="640" height="30" fill="#c87020" opacity="0.05" rx="4"/>
+      <!-- Prayer flags -->
+      <line x1="350" y1="588" x2="700" y2="565" stroke="#c84020" stroke-width="1" opacity="0.5"/>
+      <line x1="700" y1="565" x2="1050" y2="588" stroke="#1848a0" stroke-width="1" opacity="0.5"/>
+      <g opacity="0.7">
+        <rect x="385" y="578" width="14" height="10" fill="#c84020"/>
+        <rect x="435" y="571" width="14" height="10" fill="#f0c820"/>
+        <rect x="485" y="566" width="14" height="10" fill="#f8f0e0"/>
+        <rect x="535" y="562" width="14" height="10" fill="#1848a0"/>
+        <rect x="585" y="559" width="14" height="10" fill="#208840"/>
+        <rect x="635" y="558" width="14" height="10" fill="#c84020"/>
+        <rect x="715" y="558" width="14" height="10" fill="#f0c820"/>
+        <rect x="765" y="560" width="14" height="10" fill="#f8f0e0"/>
+        <rect x="815" y="563" width="14" height="10" fill="#1848a0"/>
+        <rect x="865" y="568" width="14" height="10" fill="#208840"/>
+        <rect x="915" y="574" width="14" height="10" fill="#c84020"/>
+        <rect x="965" y="582" width="14" height="10" fill="#f0c820"/>
+      </g>
+      <!-- Boudhanath stupa silhouette distant -->
+      <g opacity="0.3" fill="#3a3020">
+        <ellipse cx="220" cy="620" rx="40" ry="12"/>
+        <rect x="208" y="540" width="24" height="80"/>
+        <rect x="200" y="534" width="40" height="10" rx="2"/>
+        <polygon points="215,480 220,534 225,480"/>
+        <rect x="213" y="472" width="14" height="10" rx="3"/>
+      </g>
+    </svg>
+  </div>
+  <div class="hero-overlay"></div>
   <div class="hero-content">
-    <div class="hero-eyebrow">Kathmandu · Nepal · Est. 2001</div>
-    <h1>Woven for<br><em>extraordinary</em><br>interiors.</h1>
-    <p class="hero-sub">Handcrafted Tibetan rugs in pure Himalayan wool and silk — made for the world's finest homes.</p>
-    <div class="hero-actions">
-      <a href="#collections" class="btn-gold">Explore Collections</a>
-      <a href="#process" class="btn-ghost">Our craft →</a>
-    </div>
+    <p class="hero-eyebrow">Boudhanath · Kathmandu · Nepal</p>
+    <h1 class="hero-title">Amaya<em>ngri</em><br>Retreat Home</h1>
+    <p class="hero-sub">Where the alleyways of Boudhanath open<br>to the Langtang Himalayan range</p>
+    <a href="#enquire" class="hero-cta">Enquire Now</a>
   </div>
   <div class="hero-scroll">
     <div class="scroll-line"></div>
-    <div class="scroll-text">Scroll</div>
+    <span>Discover</span>
   </div>
 </section>
-
-<!-- MARQUEE -->
-<div class="marquee-bar">
-  <div class="marquee-track">
-    <div class="marquee-item">Hand Knotted</div>
-    <div class="marquee-item">Pure Himalayan Wool</div>
-    <div class="marquee-item">Natural Silk</div>
-    <div class="marquee-item">GoodWeave Certified</div>
-    <div class="marquee-item">Custom Sizes</div>
-    <div class="marquee-item">Bespoke Designs</div>
-    <div class="marquee-item">Ethically Made</div>
-    <div class="marquee-item">Fair Trade Workshop</div>
-    <!-- duplicate for loop -->
-    <div class="marquee-item">Hand Knotted</div>
-    <div class="marquee-item">Pure Himalayan Wool</div>
-    <div class="marquee-item">Natural Silk</div>
-    <div class="marquee-item">GoodWeave Certified</div>
-    <div class="marquee-item">Custom Sizes</div>
-    <div class="marquee-item">Bespoke Designs</div>
-    <div class="marquee-item">Ethically Made</div>
-    <div class="marquee-item">Fair Trade Workshop</div>
-  </div>
-</div>
 
 <!-- INTRO -->
-<section class="intro" id="about">
-  <div class="container">
-    <div class="intro-grid reveal">
-      <div class="intro-left">
-        <p class="eyebrow">Our Story</p>
-        <h2 class="display">Craftsmanship<br>passed down <em>through<br>generations.</em></h2>
-        <p class="intro-body">Founded in the heart of Kathmandu, Sonam Rugs began with a small group of master weavers and a single belief: that quality should never be compromised. Today, our rugs adorn the living rooms, hallways, and studies of discerning homes around the world — from New York penthouses to London townhouses and Parisian apartments.</p>
-        <p class="intro-body" style="margin-top:-8px">Each carpet is woven entirely by hand using traditional Tibetan knotting techniques, with natural Himalayan wool and pure silk sourced directly from trusted suppliers. No shortcuts. No machines.</p>
-        <div class="stat-row">
-          <div class="stat"><div class="num">20+</div><div class="lbl">Years weaving</div></div>
-          <div class="stat"><div class="num">60+</div><div class="lbl">Countries served</div></div>
-          <div class="stat"><div class="num">100%</div><div class="lbl">Hand knotted</div></div>
+<section style="background:var(--warm-black); padding: 0 0 0;">
+  <div class="intro">
+    <div class="intro-text reveal">
+      <h2>A sanctuary<br><em>nestled in the sacred</em></h2>
+      <p>Amayangri sits deep within the ancient alleyways of Boudhanath — one of the holiest Buddhist stupas in the world — yet opens its east-facing windows to the full sweep of the Langtang Himalayan range. Forest in the middle ground, snow peaks beyond.</p>
+      <p>Designed as a single-storey retreat on 14 × 20 feet of sacred ground, every element is chosen for stillness: stone walls, carved wood, morning light, the distant sound of monastery bells.</p>
+      <div class="intro-details">
+        <div class="detail-item reveal reveal-delay-1">
+          <div class="detail-label">Area</div>
+          <div class="detail-value">14 × 20 ft</div>
+        </div>
+        <div class="detail-item reveal reveal-delay-2">
+          <div class="detail-label">Orientation</div>
+          <div class="detail-value">East Facing</div>
+        </div>
+        <div class="detail-item reveal reveal-delay-2">
+          <div class="detail-label">Setting</div>
+          <div class="detail-value">Single Storey</div>
+        </div>
+        <div class="detail-item reveal reveal-delay-3">
+          <div class="detail-label">View</div>
+          <div class="detail-value">Langtang Range</div>
         </div>
       </div>
-      <div class="intro-right">
-        <img src="https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=900&q=80" alt="Artisan weaving a rug in Kathmandu">
-        <div class="intro-right-caption">Master weaver · Boudha, Kathmandu</div>
+    </div>
+    <div class="intro-drawing reveal reveal-delay-2">
+      <!-- Mini architectural elevation -->
+      <svg viewBox="0 0 500 340" xmlns="http://www.w3.org/2000/svg" font-family="Georgia, serif">
+        <defs>
+          <linearGradient id="iwall" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stop-color="#4a3c28"/>
+            <stop offset="100%" stop-color="#2a2015"/>
+          </linearGradient>
+          <linearGradient id="iroof" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stop-color="#3a2c1a"/>
+            <stop offset="100%" stop-color="#1a1208"/>
+          </linearGradient>
+          <linearGradient id="isky2" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stop-color="#0e1820"/>
+            <stop offset="100%" stop-color="#1e2c2a"/>
+          </linearGradient>
+        </defs>
+        <!-- Sky -->
+        <rect width="500" height="340" fill="url(#isky2)"/>
+        <!-- Mountains outline only -->
+        <polygon points="0,170 40,120 80,135 120,90 170,110 210,70 250,55 290,75 330,60 370,78 410,95 450,115 490,105 500,112 500,185 0,185" fill="#1e3040" opacity="0.8"/>
+        <polygon points="200,75 225,55 250,55 240,72 215,80" fill="#e8f0f8" opacity="0.6"/>
+        <polygon points="315,65 345,55 370,68 355,80 330,84" fill="#e8f0f8" opacity="0.6"/>
+        <!-- Forest -->
+        <rect x="0" y="183" width="500" height="40" fill="#0e1a0a"/>
+        <g fill="#0a1408">
+          <polygon points="0,185 16,152 32,185"/>
+          <polygon points="45,185 62,150 79,185"/>
+          <polygon points="90,182 110,146 130,182"/>
+          <polygon points="145,185 165,150 185,185"/>
+          <polygon points="205,180 228,142 251,180"/>
+          <polygon points="270,183 292,148 314,183"/>
+          <polygon points="330,180 355,140 380,180"/>
+          <polygon points="395,183 418,148 441,183"/>
+          <polygon points="455,185 475,150 495,185"/>
+        </g>
+        <!-- Ground -->
+        <rect x="0" y="220" width="500" height="120" fill="#1a1410"/>
+        <!-- Building -->
+        <polygon points="80,135 250,95 420,135" fill="url(#iroof)"/>
+        <polygon points="80,135 420,135 410,145 90,145" fill="#1a0e04"/>
+        <rect x="82" y="130" width="336" height="92" fill="url(#iwall)"/>
+        <!-- Windows with warm glow -->
+        <rect x="100" y="148" width="80" height="70" fill="#c87020" opacity="0.5" rx="2"/>
+        <rect x="100" y="148" width="80" height="70" fill="none" stroke="#6a4820" stroke-width="1.5" rx="2"/>
+        <rect x="212" y="156" width="50" height="42" fill="#c87020" opacity="0.35" rx="2"/>
+        <rect x="212" y="156" width="50" height="42" fill="none" stroke="#6a4820" stroke-width="1.5" rx="2"/>
+        <rect x="295" y="148" width="100" height="70" fill="#c87020" opacity="0.45" rx="2"/>
+        <rect x="295" y="148" width="100" height="70" fill="none" stroke="#6a4820" stroke-width="1.5" rx="2"/>
+        <!-- Door -->
+        <rect x="218" y="193" width="56" height="30" fill="#0a0804" rx="1"/>
+        <rect x="218" y="193" width="56" height="30" fill="none" stroke="#6a4820" stroke-width="1.5" rx="1"/>
+        <!-- Decorative eave bracket line -->
+        <rect x="82" y="143" width="336" height="4" fill="#2a1c08"/>
+        <!-- Name plate -->
+        <rect x="162" y="103" width="170" height="25" rx="2" fill="#1a0e04" opacity="0.8"/>
+        <text x="247" y="116" text-anchor="middle" font-size="7.5" fill="#d4a850" font-family="Georgia, serif" letter-spacing="3">AMAYANGRI</text>
+        <text x="247" y="124" text-anchor="middle" font-size="5" fill="#a88040" font-family="Georgia, serif" letter-spacing="3">RETREAT HOME</text>
+        <!-- Prayer flags -->
+        <line x1="70" y1="135" x2="250" y2="105" stroke="#c84020" stroke-width="0.8" opacity="0.6"/>
+        <line x1="250" y1="105" x2="430" y2="135" stroke="#1848a0" stroke-width="0.8" opacity="0.6"/>
+        <g opacity="0.8">
+          <rect x="93" y="126" width="9" height="7" fill="#c84020"/>
+          <rect x="123" y="120" width="9" height="7" fill="#f0c820"/>
+          <rect x="153" y="115" width="9" height="7" fill="#f8f0e0"/>
+          <rect x="183" y="111" width="9" height="7" fill="#1848a0"/>
+          <rect x="213" y="108" width="9" height="7" fill="#208840"/>
+          <rect x="243" y="107" width="9" height="7" fill="#c84020"/>
+          <rect x="273" y="108" width="9" height="7" fill="#f0c820"/>
+          <rect x="303" y="111" width="9" height="7" fill="#f8f0e0"/>
+          <rect x="333" y="115" width="9" height="7" fill="#1848a0"/>
+          <rect x="363" y="120" width="9" height="7" fill="#208840"/>
+          <rect x="393" y="126" width="9" height="7" fill="#c84020"/>
+        </g>
+        <!-- Label -->
+        <text x="247" y="332" text-anchor="middle" font-size="7" fill="#5a4838" font-family="Georgia, serif" letter-spacing="3">EAST ELEVATION</text>
+      </svg>
+      <div class="drawing-label">East elevation — modernly traditional</div>
+    </div>
+  </div>
+</section>
+
+<!-- SPACES -->
+<section class="spaces" id="spaces">
+  <div class="section-header reveal">
+    <p class="section-eyebrow">The Rooms</p>
+    <h2 class="section-title">Four <em>carefully considered</em> spaces</h2>
+  </div>
+  <div class="spaces-grid">
+    <!-- BEDROOM -->
+    <div class="space-card reveal">
+      <div class="space-card-bg" style="background:#1a1008;">
+        <svg width="100%" height="100%" viewBox="0 0 300 400" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
+          <defs>
+            <linearGradient id="brlight" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0%" stop-color="#f5e8c0" stop-opacity="0.95"/>
+              <stop offset="100%" stop-color="#c87020" stop-opacity="0.2"/>
+            </linearGradient>
+          </defs>
+          <!-- Room walls -->
+          <rect width="300" height="400" fill="#1e160c"/>
+          <!-- Floor boards -->
+          <g stroke="#2e2010" stroke-width="1" opacity="0.6">
+            <line x1="0" y1="290" x2="300" y2="290"/>
+            <line x1="0" y1="310" x2="300" y2="310"/>
+            <line x1="0" y1="330" x2="300" y2="330"/>
+            <line x1="0" y1="350" x2="300" y2="350"/>
+            <line x1="0" y1="370" x2="300" y2="370"/>
+            <line x1="0" y1="390" x2="300" y2="390"/>
+          </g>
+          <!-- East window — large, full of morning light -->
+          <rect x="30" y="40" width="240" height="180" fill="url(#brlight)" rx="2"/>
+          <rect x="30" y="40" width="240" height="180" fill="none" stroke="#6a4820" stroke-width="3" rx="2"/>
+          <!-- Muntins -->
+          <line x1="30" y1="130" x2="270" y2="130" stroke="#5a3818" stroke-width="2"/>
+          <line x1="150" y1="40" x2="150" y2="220" stroke="#5a3818" stroke-width="2"/>
+          <!-- Mountain view through window (silhouette) -->
+          <clipPath id="winClip"><rect x="32" y="42" width="236" height="176" rx="1"/></clipPath>
+          <g clip-path="url(#winClip)">
+            <rect x="32" y="42" width="236" height="176" fill="#b8d4f0" opacity="0.7"/>
+            <rect x="32" y="42" width="236" height="176" fill="#f5e8c0" opacity="0.4"/>
+            <polygon points="32,120 80,88 110,100 140,70 180,85 210,60 240,75 270,65 270,130 32,130" fill="#9ab8d0" opacity="0.8"/>
+            <polygon points="32,210 32,190 120,180 170,195 220,180 270,192 270,218" fill="#2d4228" opacity="0.9"/>
+          </g>
+          <!-- Warm sunlight shaft -->
+          <polygon points="30,40 270,40 220,290 80,290" fill="#f5e8a0" opacity="0.08"/>
+          <!-- Bed -->
+          <rect x="40" y="255" width="180" height="100" fill="#3a2c1a" rx="3"/>
+          <rect x="40" y="255" width="180" height="30" fill="#2a1c0e" rx="3"/>
+          <!-- Pillows -->
+          <rect x="55" y="260" width="40" height="22" fill="#c8b090" rx="10"/>
+          <rect x="145" y="260" width="40" height="22" fill="#c8b090" rx="10"/>
+          <!-- Linen texture -->
+          <rect x="40" y="285" width="180" height="70" fill="#4a3825" rx="2"/>
+          <!-- Bedside table -->
+          <rect x="232" y="268" width="36" height="36" fill="#2a1c0e" rx="2"/>
+          <!-- Candle on table -->
+          <rect x="246" y="258" width="6" height="12" fill="#e8d8a0"/>
+          <ellipse cx="249" cy="257" rx="4" ry="2" fill="#ff8820" opacity="0.9"/>
+          <!-- Wooden frame window surround carved detail -->
+          <rect x="24" y="34" width="252" height="8" fill="#5a3818"/>
+          <rect x="24" y="218" width="252" height="6" fill="#5a3818"/>
+          <!-- Wall texture subtle -->
+          <rect x="0" y="0" width="300" height="400" fill="#c87020" opacity="0.03"/>
+        </svg>
+      </div>
+      <div class="space-card-overlay"></div>
+      <div class="space-card-content">
+        <div class="space-number">01 / Bedroom</div>
+        <div class="space-name">Full of<br>Morning Light</div>
+        <div class="space-desc">East-facing, Himalayan view · 6 × 8.5 ft</div>
+      </div>
+    </div>
+
+    <!-- PUJA ROOM -->
+    <div class="space-card reveal reveal-delay-1">
+      <div class="space-card-bg" style="background:#0e0c08;">
+        <svg width="100%" height="100%" viewBox="0 0 300 400" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
+          <!-- Room -->
+          <rect width="300" height="400" fill="#120e0a"/>
+          <!-- High small window — minimal, clerestory -->
+          <rect x="105" y="40" width="90" height="65" fill="#8ab0d0" opacity="0.4" rx="2"/>
+          <rect x="105" y="40" width="90" height="65" fill="none" stroke="#4a3010" stroke-width="2" rx="2"/>
+          <line x1="105" y1="72" x2="195" y2="72" stroke="#4a3010" stroke-width="1.5"/>
+          <line x1="150" y1="40" x2="150" y2="105" stroke="#4a3010" stroke-width="1.5"/>
+          <!-- Shaft of light from window -->
+          <polygon points="115,105 185,105 240,400 60,400" fill="#f5e8b0" opacity="0.04"/>
+          <!-- Altar / Shrine base -->
+          <rect x="60" y="155" width="180" height="12" fill="#3a2808" rx="1"/>
+          <rect x="70" y="120" width="160" height="36" fill="#2a1c08" rx="2"/>
+          <!-- Altar cloth -->
+          <rect x="58" y="155" width="184" height="5" fill="#c84020" opacity="0.6"/>
+          <!-- Offerings tray -->
+          <rect x="100" y="147" width="100" height="10" fill="#8a6030" rx="1"/>
+          <!-- Oil lamps (diyas) -->
+          <ellipse cx="120" cy="147" rx="10" ry="4" fill="#c8a020"/>
+          <ellipse cx="150" cy="147" rx="10" ry="4" fill="#c8a020"/>
+          <ellipse cx="180" cy="147" rx="10" ry="4" fill="#c8a020"/>
+          <!-- Flame -->
+          <ellipse cx="120" cy="143" rx="4" ry="5" fill="#ff8820" opacity="0.9"/>
+          <ellipse cx="120" cy="141" rx="2.5" ry="3" fill="#ffcc30"/>
+          <ellipse cx="150" cy="143" rx="4" ry="5" fill="#ff8820" opacity="0.9"/>
+          <ellipse cx="150" cy="141" rx="2.5" ry="3" fill="#ffcc30"/>
+          <ellipse cx="180" cy="143" rx="4" ry="5" fill="#ff8820" opacity="0.9"/>
+          <ellipse cx="180" cy="141" rx="2.5" ry="3" fill="#ffcc30"/>
+          <!-- Ambient lamp glow -->
+          <ellipse cx="150" cy="160" rx="80" ry="40" fill="#ff8820" opacity="0.08"/>
+          <!-- Incense smoke wisps -->
+          <path d="M120 138 Q118 125 122 112 Q118 99 120 86" fill="none" stroke="#e8e0c8" stroke-width="0.8" opacity="0.3"/>
+          <path d="M150 136 Q155 120 148 105 Q153 90 150 75" fill="none" stroke="#e8e0c8" stroke-width="0.8" opacity="0.3"/>
+          <path d="M180 138 Q182 122 178 108 Q183 95 180 80" fill="none" stroke="#e8e0c8" stroke-width="0.8" opacity="0.3"/>
+          <!-- Meditation mat -->
+          <ellipse cx="150" cy="310" rx="65" ry="35" fill="#8a6030" opacity="0.5"/>
+          <ellipse cx="150" cy="310" rx="55" ry="28" fill="#7a5025" opacity="0.5"/>
+          <!-- Floor -->
+          <rect x="0" y="360" width="300" height="40" fill="#1a1208"/>
+          <!-- Mandala floor pattern subtle -->
+          <circle cx="150" cy="310" r="30" fill="none" stroke="#c8a020" stroke-width="0.5" opacity="0.2"/>
+          <circle cx="150" cy="310" r="20" fill="none" stroke="#c8a020" stroke-width="0.5" opacity="0.2"/>
+          <circle cx="150" cy="310" r="10" fill="none" stroke="#c8a020" stroke-width="0.5" opacity="0.2"/>
+          <!-- Wall texture -->
+          <rect x="0" y="0" width="300" height="400" fill="#c87020" opacity="0.02"/>
+        </svg>
+      </div>
+      <div class="space-card-overlay"></div>
+      <div class="space-card-content">
+        <div class="space-number">02 / Puja Room</div>
+        <div class="space-name">Clean,<br>Peaceful</div>
+        <div class="space-desc">Minimal sanctuary · meditation altar · 6 × 8.5 ft</div>
+      </div>
+    </div>
+
+    <!-- SITTING AREA -->
+    <div class="space-card reveal reveal-delay-2">
+      <div class="space-card-bg" style="background:#100c08;">
+        <svg width="100%" height="100%" viewBox="0 0 300 400" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
+          <!-- Room -->
+          <rect width="300" height="400" fill="#160e08"/>
+          <!-- Large east window -->
+          <rect x="20" y="50" width="140" height="110" fill="#8ab8d8" opacity="0.35" rx="2"/>
+          <rect x="20" y="50" width="140" height="110" fill="none" stroke="#4a3010" stroke-width="2" rx="2"/>
+          <line x1="20" y1="105" x2="160" y2="105" stroke="#4a3010" stroke-width="1.5"/>
+          <line x1="90" y1="50" x2="90" y2="160" stroke="#4a3010" stroke-width="1.5"/>
+          <!-- Mountain view in window -->
+          <clipPath id="satWin"><rect x="22" y="52" width="136" height="106" rx="1"/></clipPath>
+          <g clip-path="url(#satWin)">
+            <rect x="22" y="52" width="136" height="106" fill="#b8d0e8" opacity="0.5"/>
+            <polygon points="22,100 55,80 72,88 90,65 110,78 130,60 158,70 158,108 22,108" fill="#8ab0c8" opacity="0.9"/>
+            <polygon points="22,150 22,145 80,138 120,148 158,136 158,158" fill="#1e2e18" opacity="0.95"/>
+          </g>
+          <!-- Forest glow from window -->
+          <polygon points="20,160 160,160 220,400 0,400" fill="#e8b820" opacity="0.03"/>
+          <!-- IRON FIREPLACE — feature piece -->
+          <rect x="200" y="80" width="85" height="120" fill="#1a1208" rx="3"/>
+          <!-- Fireplace arch -->
+          <path d="M210,195 L210,100 Q242,60 275,100 L275,195" fill="#120e06" stroke="#3a2808" stroke-width="1.5"/>
+          <!-- Mantelpiece -->
+          <rect x="193" y="74" width="99" height="10" fill="#2a1c0e" rx="1"/>
+          <!-- Fire glow -->
+          <ellipse cx="242" cy="175" rx="30" ry="22" fill="#c84010" opacity="0.7"/>
+          <ellipse cx="242" cy="165" rx="20" ry="16" fill="#ff5010" opacity="0.8"/>
+          <ellipse cx="242" cy="158" rx="13" ry="10" fill="#ff8820" opacity="0.9"/>
+          <ellipse cx="242" cy="152" rx="8" ry="7" fill="#ffcc30"/>
+          <!-- Fire ambient glow on room -->
+          <ellipse cx="242" cy="220" rx="80" ry="60" fill="#c84010" opacity="0.12"/>
+          <!-- Log stack at base -->
+          <rect x="218" y="188" width="48" height="8" fill="#2a1808" rx="2"/>
+          <rect x="222" y="184" width="40" height="6" fill="#3a2410" rx="2"/>
+          <!-- Sofa -->
+          <rect x="20" y="240" width="180" height="70" fill="#2a2010" rx="4"/>
+          <rect x="20" y="238" width="180" height="20" fill="#1a1408" rx="4"/>
+          <rect x="20" y="238" width="16" height="70" fill="#1a1408" rx="4"/>
+          <rect x="184" y="238" width="16" height="70" fill="#1a1408" rx="4"/>
+          <!-- Cushions -->
+          <rect x="40" y="250" width="38" height="28" fill="#3a2c18" rx="3"/>
+          <rect x="88" y="250" width="38" height="28" fill="#3a2c18" rx="3"/>
+          <rect x="136" y="250" width="38" height="28" fill="#3a2c18" rx="3"/>
+          <!-- Coffee table -->
+          <rect x="70" y="318" width="100" height="40" fill="#2e2010" rx="2"/>
+          <rect x="75" y="314" width="90" height="6" fill="#3a2818" rx="1"/>
+          <!-- Candle -->
+          <rect x="112" y="306" width="6" height="10" fill="#e8d8a0"/>
+          <ellipse cx="115" cy="305" rx="5" ry="2.5" fill="#ff8820" opacity="0.8"/>
+          <!-- Small rug -->
+          <ellipse cx="150" cy="330" rx="70" ry="30" fill="#5a3820" opacity="0.35"/>
+          <!-- Wall texture -->
+          <rect x="0" y="0" width="300" height="400" fill="#c87020" opacity="0.03"/>
+        </svg>
+      </div>
+      <div class="space-card-overlay"></div>
+      <div class="space-card-content">
+        <div class="space-number">03 / Sitting Area</div>
+        <div class="space-name">Iron Fire,<br>Forest View</div>
+        <div class="space-desc">Cast iron fireplace · east windows · 8 × 10.5 ft</div>
+      </div>
+    </div>
+
+    <!-- BATHROOM -->
+    <div class="space-card reveal reveal-delay-3">
+      <div class="space-card-bg" style="background:#0c1018;">
+        <svg width="100%" height="100%" viewBox="0 0 300 400" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
+          <defs>
+            <linearGradient id="bathwater" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%" stop-color="#7ab8d8" stop-opacity="0.6"/>
+              <stop offset="100%" stop-color="#3a7898" stop-opacity="0.3"/>
+            </linearGradient>
+          </defs>
+          <!-- Room - cool tones for bathroom -->
+          <rect width="300" height="400" fill="#0e1416"/>
+          <!-- Stone wall texture suggestion -->
+          <g stroke="#1a2024" stroke-width="1" opacity="0.6">
+            <line x1="0" y1="60" x2="300" y2="60"/>
+            <line x1="0" y1="90" x2="300" y2="90"/>
+            <line x1="0" y1="120" x2="300" y2="120"/>
+            <line x1="70" y1="0" x2="70" y2="200"/>
+            <line x1="155" y1="0" x2="155" y2="200"/>
+            <line x1="240" y1="0" x2="240" y2="200"/>
+          </g>
+          <!-- Skylight glow -->
+          <ellipse cx="150" cy="0" rx="100" ry="60" fill="#8ab8d8" opacity="0.15"/>
+          <!-- Freestanding bath tub -->
+          <ellipse cx="150" cy="200" rx="100" ry="52" fill="#1e2a30"/>
+          <ellipse cx="150" cy="200" rx="92" ry="46" fill="url(#bathwater)"/>
+          <ellipse cx="150" cy="195" rx="86" ry="40" fill="#7ab8d8" opacity="0.2"/>
+          <!-- Bath rim highlight -->
+          <ellipse cx="150" cy="153" rx="100" ry="10" fill="#2e3a40" stroke="#3a4850" stroke-width="1"/>
+          <!-- Tub feet -->
+          <ellipse cx="70" cy="245" rx="10" ry="5" fill="#1a2028"/>
+          <ellipse cx="230" cy="245" rx="10" ry="5" fill="#1a2028"/>
+          <!-- Brass taps -->
+          <rect x="143" y="148" width="14" height="8" fill="#b8a060" rx="2"/>
+          <ellipse cx="140" cy="148" rx="7" ry="4" fill="#a89050"/>
+          <ellipse cx="160" cy="148" rx="7" ry="4" fill="#a89050"/>
+          <!-- Steam wisps -->
+          <path d="M120 152 Q116 135 120 118" fill="none" stroke="#8ab8c8" stroke-width="1" opacity="0.4"/>
+          <path d="M150 148 Q155 130 148 112" fill="none" stroke="#8ab8c8" stroke-width="1" opacity="0.4"/>
+          <path d="M180 152 Q184 135 180 118" fill="none" stroke="#8ab8c8" stroke-width="1" opacity="0.4"/>
+          <!-- Stone vanity -->
+          <rect x="20" y="285" width="130" height="50" fill="#1e2028" rx="3"/>
+          <rect x="20" y="280" width="130" height="8" fill="#283038" rx="2"/>
+          <!-- Vessel sink -->
+          <ellipse cx="85" cy="283" rx="30" ry="12" fill="#1a2830" stroke="#3a4850" stroke-width="1"/>
+          <!-- Mirror -->
+          <rect x="25" y="160" width="120" height="110" fill="#0e1820" stroke="#3a4850" stroke-width="1.5" rx="2"/>
+          <rect x="25" y="160" width="120" height="110" fill="#4ab8e0" opacity="0.08" rx="2"/>
+          <!-- Reflection (window reflected) -->
+          <rect x="35" y="170" width="100" height="90" fill="#3a8ab0" opacity="0.06" rx="1"/>
+          <!-- Towel rail -->
+          <rect x="175" y="290" width="90" height="5" fill="#8a7050" rx="2"/>
+          <rect x="175" y="300" width="90" height="5" fill="#8a7050" rx="2"/>
+          <!-- Hanging towels -->
+          <rect x="185" y="295" width="25" height="40" fill="#e8dcc8" opacity="0.6" rx="1"/>
+          <rect x="220" y="295" width="25" height="40" fill="#e8dcc8" opacity="0.6" rx="1"/>
+          <!-- Candle sconce -->
+          <rect x="248" y="195" width="6" height="14" fill="#e8d8a0"/>
+          <ellipse cx="251" cy="194" rx="5" ry="2.5" fill="#ff8820" opacity="0.9"/>
+          <ellipse cx="251" cy="220" rx="20" ry="12" fill="#ff8820" opacity="0.06"/>
+          <!-- Floor -->
+          <rect x="0" y="355" width="300" height="45" fill="#0a0e10"/>
+          <g stroke="#141a1e" stroke-width="1">
+            <line x1="0" y1="355" x2="300" y2="355"/>
+            <line x1="100" y1="355" x2="100" y2="400"/>
+            <line x1="200" y1="355" x2="200" y2="400"/>
+          </g>
+        </svg>
+      </div>
+      <div class="space-card-overlay"></div>
+      <div class="space-card-content">
+        <div class="space-number">04 / Bathroom</div>
+        <div class="space-name">Deluxe<br>Attached</div>
+        <div class="space-desc">Freestanding bath · stone vanity · attached</div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- COLLECTIONS -->
-<section class="collections" id="collections">
-  <div class="container">
-    <div class="col-header reveal">
-      <div>
-        <p class="eyebrow">Our Collections</p>
-        <h2 class="display">Every weave,<br>a <em>distinct world.</em></h2>
+<!-- PHILOSOPHY -->
+<section class="philosophy" id="about">
+  <div class="philosophy-inner">
+    <div class="philosophy-ornament reveal"></div>
+    <blockquote class="philosophy-quote reveal reveal-delay-1">
+      "In the shadow of the stupa, where butter lamps have burned for a thousand years, we built a place to be still."
+    </blockquote>
+    <p class="philosophy-attribution reveal reveal-delay-2">The Amayangri Philosophy</p>
+    <div class="philosophy-pillars">
+      <div class="pillar reveal">
+        <div class="pillar-icon">⌘</div>
+        <div class="pillar-title">Modernly Traditional</div>
+        <p class="pillar-text">Newari carved wood, stone walls, and pitched roof — refined with clean lines and minimal ornament. Ancient craft, contemporary spirit.</p>
       </div>
-      <a href="https://sonamrugs.com/products/" target="_blank" class="col-link">View all collections</a>
-    </div>
-    <div class="col-grid reveal">
-      <div class="col-item">
-        <img src="https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?w=700&q=80" alt="Natural Collection">
-        <div class="col-overlay">
-          <div class="col-name">Natural</div>
-          <div class="col-sub">Undyed Himalayan Wool</div>
-        </div>
-        <div class="col-tag">Bestseller</div>
+      <div class="pillar reveal reveal-delay-1">
+        <div class="pillar-icon">◈</div>
+        <div class="pillar-title">East Light</div>
+        <p class="pillar-text">Every major window faces east. The Langtang peaks catch dawn before you wake. Morning is an event here, not a routine.</p>
       </div>
-      <div class="col-item">
-        <img src="https://images.unsplash.com/photo-1631679706909-1844bbd07221?w=700&q=80" alt="High End Silk Collection">
-        <div class="col-overlay">
-          <div class="col-name">High End Silk</div>
-          <div class="col-sub">Pure Silk & Wool Blend</div>
-        </div>
-      </div>
-      <div class="col-item">
-        <img src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=700&q=80" alt="Flat Weave Collection">
-        <div class="col-overlay">
-          <div class="col-name">Flat Weave</div>
-          <div class="col-sub">Contemporary Kilims</div>
-        </div>
-        <div class="col-tag">New</div>
+      <div class="pillar reveal reveal-delay-2">
+        <div class="pillar-icon">⬡</div>
+        <div class="pillar-title">Sacred Proximity</div>
+        <p class="pillar-text">Minutes on foot from Boudhanath Stupa. The monastery bells, the circumambulating pilgrims, the smell of juniper smoke — all just beyond the gate.</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- FEATURES / WHY US -->
-<section class="features">
-  <div class="container">
-    <div class="features-body">
-      <div class="features-left reveal-l">
-        <img src="https://images.unsplash.com/photo-1600210492493-0946911123ea?w=800&q=80" alt="Luxury interior with Sonam rug">
+<!-- FLOOR PLAN -->
+<section class="floorplan" id="floorplan">
+  <div class="section-header reveal">
+    <p class="section-eyebrow">Architecture</p>
+    <h2 class="section-title">The <em>plan</em> — 14 × 20 ft</h2>
+  </div>
+  <div class="floorplan-inner">
+    <div class="floorplan-svg-wrap reveal">
+      <svg viewBox="0 0 440 360" xmlns="http://www.w3.org/2000/svg" font-family="Georgia, serif">
+        <!-- Background -->
+        <rect width="440" height="360" fill="#e8dcc8"/>
+        <!-- Outer wall -->
+        <rect x="60" y="30" width="320" height="280" rx="0" fill="#f0e8d8" stroke="#3a2808" stroke-width="3"/>
+        <!-- BEDROOM NW -->
+        <rect x="60" y="30" width="156" height="140" fill="#e4d8c4" stroke="#3a2808" stroke-width="1.5"/>
+        <!-- Bed symbol -->
+        <rect x="76" y="44" width="75" height="52" rx="3" fill="#c8b090"/>
+        <rect x="76" y="44" width="75" height="16" rx="3" fill="#a89070"/>
+        <rect x="80" y="46" width="16" height="12" rx="6" fill="#d8c0a0"/>
+        <rect x="118" y="46" width="16" height="12" rx="6" fill="#d8c0a0"/>
+        <rect x="156" y="52" width="18" height="18" rx="2" fill="#b09870"/>
+        <!-- Room label -->
+        <text x="108" y="126" text-anchor="middle" font-size="8.5" fill="#3a2808" font-family="Georgia, serif" letter-spacing="1">BEDROOM</text>
+        <text x="108" y="138" text-anchor="middle" font-size="6.5" fill="#8a6840" font-family="Georgia, serif">6 × 8.5 ft · east light</text>
+        <!-- Window marks N wall -->
+        <rect x="90" y="30" width="40" height="3" fill="#7ad4f0" opacity="0.8"/>
+
+        <!-- PUJA ROOM SW -->
+        <rect x="60" y="170" width="156" height="140" fill="#ede4d4" stroke="#3a2808" stroke-width="1.5"/>
+        <!-- Altar -->
+        <rect x="92" y="186" width="48" height="30" rx="2" fill="#c8a870"/>
+        <rect x="92" y="186" width="48" height="8" rx="1" fill="#a88040"/>
+        <ellipse cx="116" cy="186" rx="6" ry="2.5" fill="#d0a830"/>
+        <ellipse cx="116" cy="183" rx="3" ry="2" fill="#ffcc40"/>
+        <!-- Meditation mat -->
+        <ellipse cx="116" cy="268" rx="28" ry="18" fill="#c09858" opacity="0.5"/>
+        <!-- Room label -->
+        <text x="108" y="305" text-anchor="middle" font-size="8.5" fill="#3a2808" font-family="Georgia, serif" letter-spacing="1">PUJA ROOM</text>
+        <text x="108" y="317" text-anchor="middle" font-size="6.5" fill="#8a6840" font-family="Georgia, serif">minimal · 6 × 8.5 ft</text>
+        <!-- Window S wall -->
+        <rect x="88" y="307" width="40" height="3" fill="#7ad4f0" opacity="0.8"/>
+
+        <!-- SITTING AREA NE -->
+        <rect x="216" y="30" width="164" height="168" fill="#e0d4c0" stroke="#3a2808" stroke-width="1.5"/>
+        <!-- Sofa -->
+        <rect x="228" y="52" width="64" height="30" rx="3" fill="#8a7050"/>
+        <rect x="228" y="50" width="64" height="10" rx="3" fill="#7a6040"/>
+        <rect x="228" y="50" width="10" height="30" rx="3" fill="#7a6040"/>
+        <rect x="282" y="50" width="10" height="30" rx="3" fill="#7a6040"/>
+        <!-- Coffee table -->
+        <rect x="240" y="88" width="42" height="24" rx="2" fill="#9a8060" opacity="0.8"/>
+        <!-- Fireplace -->
+        <rect x="332" y="54" width="38" height="44" rx="2" fill="#2a2018"/>
+        <polygon points="328,54 351,40 374,54" fill="#3a3020"/>
+        <rect x="326" y="48" width="52" height="8" rx="1" fill="#1a1008"/>
+        <ellipse cx="351" cy="84" rx="10" ry="8" fill="#cc5508" opacity="0.9"/>
+        <ellipse cx="351" cy="80" rx="7" ry="6" fill="#ff8820" opacity="0.9"/>
+        <ellipse cx="351" cy="77" rx="4" ry="4" fill="#ffcc30"/>
+        <!-- Window E wall -->
+        <rect x="377" y="50" width="3" height="44" fill="#7ad4f0" opacity="0.8"/>
+        <!-- Room label -->
+        <text x="298" y="162" text-anchor="middle" font-size="8.5" fill="#3a2808" font-family="Georgia, serif" letter-spacing="1">SITTING AREA</text>
+        <text x="298" y="174" text-anchor="middle" font-size="6.5" fill="#8a6840" font-family="Georgia, serif">iron fireplace · 8 × 10.5 ft</text>
+
+        <!-- BATHROOM SE -->
+        <rect x="216" y="198" width="164" height="112" fill="#e4ddd0" stroke="#3a2808" stroke-width="1.5"/>
+        <!-- Bath tub -->
+        <rect x="232" y="216" width="56" height="30" rx="14" fill="#c8d8e0" stroke="#9ab0bc" stroke-width="1"/>
+        <ellipse cx="260" cy="231" rx="22" ry="9" fill="#b8ccd8" opacity="0.7"/>
+        <!-- WC -->
+        <ellipse cx="332" cy="232" rx="12" ry="16" fill="#d0d8dc" stroke="#9ab0bc" stroke-width="1"/>
+        <rect x="320" y="216" width="24" height="8" rx="2" fill="#b0b8bc"/>
+        <!-- Vanity -->
+        <rect x="318" y="248" width="52" height="18" rx="2" fill="#b0a898"/>
+        <!-- Room label -->
+        <text x="298" y="288" text-anchor="middle" font-size="8.5" fill="#3a2808" font-family="Georgia, serif" letter-spacing="1">DELUXE BATHROOM</text>
+        <text x="298" y="300" text-anchor="middle" font-size="6.5" fill="#8a6840" font-family="Georgia, serif">attached · freestanding bath</text>
+
+        <!-- NORTH ARROW -->
+        <g transform="translate(28, 140)">
+          <circle cx="0" cy="0" r="14" fill="none" stroke="#8a7050" stroke-width="0.8"/>
+          <polygon points="0,-10 3,5 0,2 -3,5" fill="#3a2808"/>
+          <polygon points="0,10 3,-5 0,-2 -3,-5" fill="#c8b090"/>
+          <text x="0" y="-16" text-anchor="middle" font-size="7" fill="#3a2808" font-family="Georgia, serif">N</text>
+          <text x="18" y="4" text-anchor="middle" font-size="7" fill="#c84020" font-family="Georgia, serif" font-weight="bold">E</text>
+        </g>
+
+        <!-- Door indicator -->
+        <path d="M380 170 A25 25 0 0 0 355 145" fill="none" stroke="#8a7050" stroke-width="1" stroke-dasharray="3,2"/>
+        <rect x="355" y="168" width="28" height="3" fill="#5a3818"/>
+
+        <!-- Scale -->
+        <rect x="320" y="330" width="60" height="4" fill="#3a2808"/>
+        <rect x="320" y="330" width="30" height="4" fill="#e8dcc8"/>
+        <text x="320" y="344" font-size="6" fill="#5a3818" font-family="Georgia, serif">0</text>
+        <text x="345" y="344" text-anchor="middle" font-size="6" fill="#5a3818" font-family="Georgia, serif">7 ft</text>
+        <text x="380" y="344" font-size="6" fill="#5a3818" font-family="Georgia, serif">14 ft</text>
+
+        <!-- Window legend -->
+        <rect x="64" y="344" width="14" height="5" fill="#7ad4f0" opacity="0.8"/>
+        <text x="84" y="349" font-size="6.5" fill="#5a3818" font-family="Georgia, serif">Window</text>
+      </svg>
+    </div>
+    <div class="floorplan-legend reveal reveal-delay-1">
+      <h3>Room Guide</h3>
+      <div class="legend-item">
+        <div class="legend-num">01</div>
+        <div class="legend-info">
+          <h4>Bedroom</h4>
+          <p>Full of east morning light. Large carved-wood framed windows frame Langtang peaks. 6 × 8.5 ft with custom bed and stone flooring.</p>
+        </div>
       </div>
-      <div class="features-right reveal-r">
-        <p class="eyebrow">Why Sonam Rugs</p>
-        <h2 class="display" style="color:var(--bone);margin-bottom:8px">The difference<br>is in the <em>details.</em></h2>
-        <div class="feat">
-          <div class="feat-num">01</div>
-          <div>
-            <h3>Pure Natural Materials</h3>
-            <p>We use exclusively hand-spun Himalayan wool and natural silk — never synthetic blends. Our dyes are plant and mineral-based, ensuring colours that deepen gracefully with age.</p>
-          </div>
+      <div class="legend-item">
+        <div class="legend-num">02</div>
+        <div class="legend-info">
+          <h4>Puja Room</h4>
+          <p>Clean, minimal, and deeply peaceful. A single high window. Altar, oil lamps, meditation mat. Silence is the primary material.</p>
         </div>
-        <div class="feat">
-          <div class="feat-num">02</div>
-          <div>
-            <h3>Fully Bespoke Service</h3>
-            <p>Every dimension, pile height, colour palette, and pattern is customisable. Work directly with our design team to create a rug made precisely for your space.</p>
-          </div>
+      </div>
+      <div class="legend-item">
+        <div class="legend-num">03</div>
+        <div class="legend-info">
+          <h4>Sitting Area</h4>
+          <p>East-facing triple windows. Cast iron fireplace as centrepiece. Forest view in foreground, Himalayan skyline beyond. 8 × 10.5 ft.</p>
         </div>
-        <div class="feat">
-          <div class="feat-num">03</div>
-          <div>
-            <h3>GoodWeave Certified</h3>
-            <p>We are a proud member of GoodWeave Nepal, guaranteeing that every rug leaving our workshop is made without child labour, in fair and safe conditions.</p>
-          </div>
-        </div>
-        <div class="feat">
-          <div class="feat-num">04</div>
-          <div>
-            <h3>Heirloom Quality</h3>
-            <p>A Sonam rug is designed to last generations. Dense knot counts and expert finishing mean your carpet only becomes more beautiful over decades of use.</p>
-          </div>
+      </div>
+      <div class="legend-item" style="border-bottom:none;">
+        <div class="legend-num">04</div>
+        <div class="legend-info">
+          <h4>Deluxe Bathroom</h4>
+          <p>Attached to sitting area. Freestanding soaking bath, stone vanity, brass fittings, stone tile. Luxurious in restraint.</p>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- PROCESS -->
-<section class="process" id="process">
-  <div class="container">
-    <div class="reveal">
-      <p class="eyebrow">How it's made</p>
-      <h2 class="display">Six steps from<br><em>fibre to floor.</em></h2>
-    </div>
-    <div class="process-steps reveal">
-      <div class="step">
-        <div class="step-n">01</div>
-        <h4>Designing</h4>
-        <p>Each pattern begins as a hand-drawn cartoon on graph paper, every knot plotted by our master designers.</p>
-      </div>
-      <div class="step">
-        <div class="step-n">02</div>
-        <h4>Dyeing</h4>
-        <p>Natural fibres are dyed in small batches using traditional mineral and botanical dye recipes refined over centuries.</p>
-      </div>
-      <div class="step">
-        <div class="step-n">03</div>
-        <h4>Weaving</h4>
-        <p>Artisans hand-knot each row of the carpet on vertical looms, a process that can take months for larger pieces.</p>
-      </div>
-      <div class="step">
-        <div class="step-n">04</div>
-        <h4>Washing</h4>
-        <p>Freshly cut rugs are washed with mountain water to soften fibres and reveal the full depth of their colour.</p>
-      </div>
-      <div class="step">
-        <div class="step-n">05</div>
-        <h4>Stretching</h4>
-        <p>Rugs are stretched onto frames and dried under the Kathmandu sun, ensuring they lay perfectly flat for life.</p>
-      </div>
-      <div class="step">
-        <div class="step-n">06</div>
-        <h4>Packing</h4>
-        <p>Each finished carpet is inspected, rolled, and packed with archival materials for safe delivery worldwide.</p>
+<!-- LOCATION -->
+<section id="location" style="background:var(--warm-black); padding: 120px 48px;">
+  <div class="location" style="padding:0;">
+    <div class="location-text reveal">
+      <h2>Deep in the alleyways of <em>Boudhanath</em></h2>
+      <p>Amayangri is tucked within the sacred ring of Boudhanath Stupa — the holiest Tibetan Buddhist site outside Tibet, and a UNESCO World Heritage site. The stupa's white dome and golden spire are visible from the garden gate.</p>
+      <p>Behind the retreat, a forest buffer creates the middle ground. On clear mornings, the Langtang range — including Langtang Lirung at 7,227m — fills the eastern sky.</p>
+      <div class="location-facts">
+        <div class="location-fact">5 min walk to Boudhanath Stupa</div>
+        <div class="location-fact">30 min from Tribhuvan International Airport</div>
+        <div class="location-fact">East-facing · Langtang range view</div>
+        <div class="location-fact">Forest buffer to the rear</div>
+        <div class="location-fact">Kathmandu Valley, Nepal · 1,400m altitude</div>
       </div>
     </div>
-  </div>
-</section>
-
-<!-- TESTIMONIALS -->
-<section class="testimonials">
-  <div class="container">
-    <div class="reveal">
-      <p class="eyebrow">Client Words</p>
-      <h2 class="display">A rug that<br>becomes <em>the room.</em></h2>
-    </div>
-    <div class="testi-grid reveal">
-      <div class="testi">
-        <div class="testi-stars"><div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div></div>
-        <q>The quality surpassed even what I'd seen in the Architectural Digest features that first made me aware of Sonam. Our living room is transformed — the rug is genuinely the most admired thing in our home.</q>
-        <div class="testi-sig">
-          <div class="avatar av1">CL</div>
-          <div><div class="author-n">Catherine L.</div><div class="author-r">Interior Designer, London</div></div>
+    <div class="location-map reveal reveal-delay-1">
+      <span class="map-compass">⊕</span>
+      <p class="map-label">Location</p>
+      <p class="map-place">Boudhanath</p>
+      <p class="map-coords">27°43'17"N · 85°21'45"E</p>
+      <div class="map-divider"></div>
+      <div class="map-nearby">
+        <div class="nearby-item">
+          <div class="nearby-name">Boudhanath Stupa</div>
+          <div class="nearby-dist">5 min walk</div>
         </div>
-      </div>
-      <div class="testi">
-        <div class="testi-stars"><div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div></div>
-        <q>We specified a custom 14 × 18 ft piece for a client's Manhattan residence. The design team was exceptional — responsive, precise, and deeply knowledgeable. The finished rug arrived flawless.</q>
-        <div class="testi-sig">
-          <div class="avatar av2">MR</div>
-          <div><div class="author-n">Marcus R.</div><div class="author-r">Principal, MR Architecture, NYC</div></div>
+        <div class="nearby-item">
+          <div class="nearby-name">Kopan Monastery</div>
+          <div class="nearby-dist">15 min walk</div>
         </div>
-      </div>
-      <div class="testi">
-        <div class="testi-stars"><div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div></div>
-        <q>I've sourced rugs from Iran, Morocco, and Turkey. Nothing compares to the depth and feel of Sonam's Tibetan wool. It is worth every penny and worth every week of waiting.</q>
-        <div class="testi-sig">
-          <div class="avatar av3">SB</div>
-          <div><div class="author-n">Sophia B.</div><div class="author-r">Collector & Homeowner, Paris</div></div>
+        <div class="nearby-item">
+          <div class="nearby-name">Pashupatinath</div>
+          <div class="nearby-dist">20 min drive</div>
+        </div>
+        <div class="nearby-item">
+          <div class="nearby-name">Thamel</div>
+          <div class="nearby-dist">25 min drive</div>
+        </div>
+        <div class="nearby-item">
+          <div class="nearby-name">KTM Airport</div>
+          <div class="nearby-dist">30 min drive</div>
+        </div>
+        <div class="nearby-item">
+          <div class="nearby-name">Langtang BC</div>
+          <div class="nearby-dist">2 day trek</div>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- FAQ -->
-<section class="faq" id="faq">
-  <div class="container">
-    <div class="faq-inner">
-      <div class="faq-left reveal-l">
-        <p class="eyebrow">Questions</p>
-        <h2 class="display">Everything<br>you might<br><em>want to know.</em></h2>
-        <p style="margin-top:32px;font-size:15px;font-weight:300;color:var(--ink-s);line-height:1.8">Can't find your answer here? Write to us at <a href="mailto:sonamrug@gmail.com" style="color:var(--gold);text-decoration:none">sonamrug@gmail.com</a> and our team will respond within 24 hours.</p>
+<!-- ENQUIRE -->
+<section class="enquire" id="enquire">
+  <h2 class="reveal">Begin your <em>retreat</em></h2>
+  <p class="reveal reveal-delay-1">Enquiries · Private Bookings · Residencies</p>
+  <form class="enquire-form" onsubmit="handleSubmit(event)">
+    <div class="form-row">
+      <div class="form-field reveal">
+        <label>First Name</label>
+        <input type="text" placeholder="Your name">
       </div>
-      <div class="faq-right reveal-r">
-        <details open>
-          <summary>How long does a custom rug take to make? <div class="sum-icon">+</div></summary>
-          <p>Timelines depend on size and complexity. A standard 8 × 10 ft rug typically takes 10–16 weeks. Larger or more intricate pieces may take up to 6 months. We keep you updated throughout the process with photos from the workshop.</p>
-        </details>
-        <details>
-          <summary>Can I order a completely custom design? <div class="sum-icon">+</div></summary>
-          <p>Absolutely. We welcome fully bespoke commissions. Share your space dimensions, design inspiration, and preferred colour palette and our team will create a digital mockup before any weaving begins.</p>
-        </details>
-        <details>
-          <summary>What materials do you use? <div class="sum-icon">+</div></summary>
-          <p>We use hand-spun Himalayan highland wool and natural silk sourced from trusted suppliers in Nepal and Tibet. All dyes are plant- or mineral-based. We do not use synthetic fibres or chemical dyes in any of our carpets.</p>
-        </details>
-        <details>
-          <summary>Do you ship internationally? <div class="sum-icon">+</div></summary>
-          <p>Yes — we ship to over 60 countries worldwide. All shipments are fully insured, carefully packed with archival materials, and come with a certificate of authenticity and care guide.</p>
-        </details>
-        <details>
-          <summary>How do I care for my Sonam rug? <div class="sum-icon">+</div></summary>
-          <p>Vacuum regularly with a low suction setting. Rotate the rug every 1–2 years to ensure even wear. For deep cleaning, we recommend professional rug washing every 3–5 years. Avoid direct sunlight and damp conditions.</p>
-        </details>
+      <div class="form-field reveal reveal-delay-1">
+        <label>Email Address</label>
+        <input type="email" placeholder="your@email.com">
       </div>
     </div>
-  </div>
-</section>
-
-<!-- CTA -->
-<section class="cta-section" id="contact">
-  <div class="container" style="position:relative;z-index:2;text-align:center">
-    <p class="eyebrow" style="text-align:center">Commission Your Rug</p>
-    <h2 class="display">Let's create something<br><em>truly yours.</em></h2>
-    <p class="cta-sub">Leave your email and our design team will be in touch within one business day.</p>
-    <div class="cta-form">
-      <input class="cta-input" type="email" placeholder="your@email.com">
-      <button class="cta-submit">Enquire</button>
+    <div class="form-row">
+      <div class="form-field reveal">
+        <label>Arrival</label>
+        <input type="date">
+      </div>
+      <div class="form-field reveal reveal-delay-1">
+        <label>Duration</label>
+        <select>
+          <option>1 week</option>
+          <option>2 weeks</option>
+          <option>1 month</option>
+          <option>3 months</option>
+          <option>Open-ended</option>
+        </select>
+      </div>
     </div>
-    <p class="cta-note">Or write directly to sonamrug@gmail.com · +977 9801020393</p>
-    <div class="cta-badges">
-      <div class="badge">GoodWeave Certified</div>
-      <div class="badge">Fair Trade Workshop</div>
-      <div class="badge">No Child Labour</div>
-      <div class="badge">Ships Worldwide</div>
+    <div class="form-field reveal">
+      <label>Your Intention</label>
+      <textarea placeholder="Tell us what brings you to Amayangri — a meditation retreat, a writing residency, simply to be still..."></textarea>
     </div>
-  </div>
+    <button type="submit" class="form-submit reveal">Send Enquiry</button>
+  </form>
 </section>
 
 <!-- FOOTER -->
 <footer>
-  <div class="footer-top">
-    <div class="footer-brand">
-      <div class="logo">Sonam Rugs</div>
-      <p>Handmade Tibetan carpets crafted with care in Kathmandu, Nepal. Delivering heirloom quality to homes around the world since 2001.</p>
-    </div>
-    <div class="footer-col">
-      <h5>Collections</h5>
-      <ul>
-        <li><a href="https://sonamrugs.com/products/" target="_blank">Natural</a></li>
-        <li><a href="https://sonamrugs.com/products/" target="_blank">High End Silk</a></li>
-        <li><a href="https://sonamrugs.com/products/" target="_blank">Flat Weave</a></li>
-        <li><a href="https://sonamrugs.com/products/" target="_blank">Round Rugs</a></li>
-      </ul>
-    </div>
-    <div class="footer-col">
-      <h5>Company</h5>
-      <ul>
-        <li><a href="https://sonamrugs.com/about/" target="_blank">About Us</a></li>
-        <li><a href="https://sonamrugs.com/process/" target="_blank">Our Process</a></li>
-        <li><a href="https://sonamrugs.com/gallery/" target="_blank">Gallery</a></li>
-        <li><a href="https://sonamrugs.com/contact/" target="_blank">Contact</a></li>
-      </ul>
-    </div>
-    <div class="footer-col">
-      <h5>Contact</h5>
-      <ul>
-        <li><a href="mailto:sonamrug@gmail.com">sonamrug@gmail.com</a></li>
-        <li><a href="tel:+9779801020393">+977 9801020393</a></li>
-        <li><a href="https://www.instagram.com/silkroadrugs.nepal/" target="_blank">Instagram</a></li>
-        <li><a style="color:rgba(250,248,244,0.25)">Boudha, Kathmandu, Nepal</a></li>
-      </ul>
-    </div>
+  <div class="footer-brand">
+    <div class="brand-name">AMAYANGRI</div>
+    <div class="brand-sub">Retreat Home · Boudhanath · Kathmandu · Nepal</div>
   </div>
-  <div class="footer-bottom">
-    <p>© 2026 Sonam Rugs Nepal. All rights reserved.</p>
-    <div class="goodweave">GoodWeave Nepal Foundation Member</div>
+  <div class="footer-center">
+    <div class="footer-flags">
+      <svg width="10" height="14" viewBox="0 0 10 14"><rect width="10" height="14" fill="#c84020"/></svg>
+      <svg width="10" height="14" viewBox="0 0 10 14"><rect width="10" height="14" fill="#f0c820"/></svg>
+      <svg width="10" height="14" viewBox="0 0 10 14"><rect width="10" height="14" fill="#f8f8f0"/></svg>
+      <svg width="10" height="14" viewBox="0 0 10 14"><rect width="10" height="14" fill="#1848a0"/></svg>
+      <svg width="10" height="14" viewBox="0 0 10 14"><rect width="10" height="14" fill="#208840"/></svg>
+    </div>
+    <div class="footer-tagline">Where silence has a sound</div>
+  </div>
+  <div class="footer-contact">
+    <div>amayangri@gmail.com</div>
+    <div>+977 1 000 0000</div>
+    <div>Boudhanath Sadak, Kathmandu 44600</div>
   </div>
 </footer>
+<div class="footer-bottom">
+  © 2025 Amayangri Retreat Home · All rights reserved · Boudhanath, Nepal
+</div>
 
 <script>
-// Cursor
-const cur = document.getElementById('cursor');
-const ring = document.getElementById('ring');
-let mx=0,my=0,rx=0,ry=0;
-document.addEventListener('mousemove',e=>{mx=e.clientX;my=e.clientY;cur.style.left=mx+'px';cur.style.top=my+'px'});
-(function lerp(){rx+=(mx-rx)*0.12;ry+=(my-ry)*0.12;ring.style.left=rx+'px';ring.style.top=ry+'px';requestAnimationFrame(lerp)})();
-
-// Nav scroll
-const nav=document.getElementById('nav');
-window.addEventListener('scroll',()=>nav.classList.toggle('scrolled',scrollY>60));
-
-// Reveal
-const obs=new IntersectionObserver(entries=>{
-  entries.forEach((e,i)=>{
-    if(e.isIntersecting){
-      e.target.style.transitionDelay=(i*0.08)+'s';
-      e.target.classList.add('vis');
-      obs.unobserve(e.target);
-    }
+  // Custom cursor
+  const cursor = document.getElementById('cursor');
+  const ring = document.getElementById('cursorRing');
+  let mouseX = 0, mouseY = 0, ringX = 0, ringY = 0;
+  document.addEventListener('mousemove', e => {
+    mouseX = e.clientX; mouseY = e.clientY;
+    cursor.style.left = mouseX - 4 + 'px';
+    cursor.style.top = mouseY - 4 + 'px';
   });
-},{threshold:0.08});
-document.querySelectorAll('.reveal,.reveal-l,.reveal-r').forEach(el=>obs.observe(el));
-
-// FAQ icon toggle
-document.querySelectorAll('details').forEach(d=>{
-  d.addEventListener('toggle',()=>{
-    d.querySelector('.sum-icon').textContent=d.open?'−':'+';
+  function animateRing() {
+    ringX += (mouseX - ringX - 18) * 0.12;
+    ringY += (mouseY - ringY - 18) * 0.12;
+    ring.style.left = ringX + 'px';
+    ring.style.top = ringY + 'px';
+    requestAnimationFrame(animateRing);
+  }
+  animateRing();
+  document.querySelectorAll('a, button, .space-card').forEach(el => {
+    el.addEventListener('mouseenter', () => { ring.style.transform = 'scale(1.8)'; ring.style.opacity = '0.4'; });
+    el.addEventListener('mouseleave', () => { ring.style.transform = 'scale(1)'; ring.style.opacity = '0.6'; });
   });
-});
+
+  // Scroll reveals
+  const reveals = document.querySelectorAll('.reveal');
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); } });
+  }, { threshold: 0.1 });
+  reveals.forEach(el => observer.observe(el));
+
+  // Form submit
+  function handleSubmit(e) {
+    e.preventDefault();
+    const btn = e.target.querySelector('.form-submit');
+    btn.textContent = 'Enquiry Sent ✓';
+    btn.style.background = '#3a6030';
+    btn.style.color = '#e8f0e0';
+    setTimeout(() => {
+      btn.textContent = 'Send Enquiry';
+      btn.style.background = '';
+      btn.style.color = '';
+    }, 4000);
+  }
+
+  // Nav scroll effect
+  const nav = document.querySelector('nav');
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 80) nav.style.background = 'rgba(26,20,16,0.95)';
+    else nav.style.background = '';
+  });
 </script>
 </body>
 </html>
